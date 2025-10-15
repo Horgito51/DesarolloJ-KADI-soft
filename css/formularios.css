@@ -1,0 +1,97 @@
+/* Archivo separado de estilos */
+html, body {
+  height: 100%; /* ocupa el 100% de la altura visible */
+  margin: 0; /* elimina los márgenes por defecto del navegador */
+  background: linear-gradient(to bottom, #052659, #5483B3);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #052659, #5483B3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.contenedor-logo {
+  margin-bottom: 20px; /* separa el logo del rectángulo */
+}
+
+.logo{
+  float: right;
+  width: 350px;
+  height: 250px;
+}
+
+.rectangulo {
+  width: 400px;
+  height: 250px;
+  background-color: #052659;
+  border-radius: 12px;
+
+  /* Centrar horizontal texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+}
+
+.rectangulo h2 {
+  margin: 0;
+  color: white;
+}
+
+/* Contenedor del formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+  /* Estilo del botón */
+  .boton button {
+    background-color: #5483B3;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 40%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+.boton button:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #3b6c99;
+}
+
+
+/* Estilo de los campos de texto */
+.formulario input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
