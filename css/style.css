@@ -30,6 +30,12 @@ hr {
   padding: 0;
 }
 
+
+.g3select {
+  width: 50%;
+}
+
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
@@ -60,69 +66,78 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-
-
-.cabecera{
-  background-color: #021024;
-  padding: 15px;
-  color: white;
-  margin: 3px 3px 3px 3px;
-  overflow: hidden;
+body {
+  font-family: 'Poppins', sans-serif;
 }
-.logo{
+
+
+
+
+.cabecera {
+  background-color: #021024;
+  color: white;
+  /* color de las letras */
+}
+
+.cabecera h1 {
+
+  font-family: 'Copperplate Gothic Light';
+  font-size: 20px;
+}
+
+
+
+.contenedorNuestro {
+  display: flex;
+}
+
+.logo {
   float: left;
   width: 250px;
   height: 150px;
 }
-.textoLogo{
-  font-size: 30px;
-  float: left;
-  margin-top: 70px;
-  margin-right: 40px;
+
+.section {
+  background-color: #021024;
 }
 
-.contenedor-detalles h1 {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-  white-space: normal;
-}
-
-.contenedor-detalles {
-  max-width: 600px;
-}
-
-section select,option{
-  background-color: #5483B3;
-  border-radius: 70px;
-
-}
-section button {
-  background-color: goldenrod;
-  border-radius: 50px;
-
+.iconos {
+  width: 35%;
+  height: 35%;
 }
 
 
-section{
-  background-color: #052659;
-  overflow: hidden;
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.socia-media{
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+
 }
 
-.contenedor-producto{
-  float: left;
-  margin-left: 100px;
-  background-color: #cccccc;
-  border-radius: 70px;
+.footer_img {
+  text-align:center;
+
+
 }
 
 
+.nacho {
+  border-color: rgb(80, 82, 153) !important;
+  color: rgb(80, 82, 153);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
 
-.contenedor-detalles{
-  float: right;
-  color: azure;
-  padding: 20px;
-  font-size: 13px;
+.nacho:hover {
+  background-color: rgb(80, 82, 153) !important;
+  border-color: rgb(80, 82, 153) !important;
+  color: white !important;
+  transform: scale(1.05);
 }
 
 footer {
