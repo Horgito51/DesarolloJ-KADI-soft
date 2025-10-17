@@ -85,10 +85,34 @@ body {
   font-size: 20px;
 }
 
+section div h1 {
+  padding-top: 50px;
 
+}
+
+section div button {
+  margin : 10px;
+}
 
 .contenedorNuestro {
   display: flex;
+}
+/*
+section div img {
+  border-color: black;
+  background-color: rgba(197, 169, 141, 0.3);
+  border-radius: 75px;
+}
+*/
+
+
+.btn.btn-primary.hola {
+  background-color: #0c516c;
+  border-color: #0c0b0b;
+}
+
+section div  div button{
+  background-color: #0c516c;
 }
 
 .logo {
