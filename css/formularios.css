@@ -9,6 +9,7 @@ html, body {
 
 body {
   background: linear-gradient(to bottom, #052659, #5483B3);
+
   display: flex;
   flex-direction: column;
   align-items: center;
