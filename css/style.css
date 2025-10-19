@@ -195,6 +195,35 @@ footer {
 
 }
 
+.dashContainer{
+  text-align: center;
+
+  display:grid;
+  grid-template-columns: 33% 33% 33%;
+  background-color: #021024;
+}
+
+.info{
+  background-color: #052659;
+  margin:20px;
+  padding:10px;
+  font-family: 'Copperplate Gothic Light';
+  font-size:15px;
+  border-radius: 10px
+}
+
+.presentacion{
+  display:grid;
+  grid-template-columns: 50% 25% 25%;
+  grid-auto-rows: minmax(100px, auto);
+  font-family: 'Copperplate Gothic Light','Copperplate Gothic Light';
+}
+
+.pupo{
+  grid-column:1;
+  grid-row: 1/4;
+}
+
 
 
 fieldset {
