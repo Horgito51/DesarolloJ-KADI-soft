@@ -29,7 +29,7 @@ body {
 
 .rectangulo {
   width: 400px;
-  height: 250px;
+  height: 350px;
   background-color: #052659;
   border-radius: 12px;
 
@@ -68,6 +68,7 @@ body {
   margin-top: 20px;
 }
 
+
   /* Estilo del botón */
   .boton button {
     background-color: #5483B3;
@@ -87,8 +88,34 @@ body {
   box-shadow: 0 1px 0 #3b6c99;
 }
 
+.botonR {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
 
-/* Estilo de los campos de texto */
+.btnR {
+  background-color: #5483B3;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  width: 40%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* efecto hover */
+.btnR:hover {
+  background-color: #3b6a99;
+}
+
+
 .formulario input {
   padding: 10px 15px;
   border: none;
