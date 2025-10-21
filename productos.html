@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NachoSoft</title>
-  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
-
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
@@ -21,24 +21,146 @@
   <meta name="theme-color" content="#fafafa">
   <title>Productos</title>
 </head>
-<body class="cuerpo">
-  <header class="cabecera">
-      <img src="img/Logo.png" alt="J-KADI SOFT" class="logo">
-      <h1 class="texto_cabecera">Lo mejor para ti</h1>
-      <img src="img/lupa.png" alt="lupa" class="iconos">
-      <input type="text" id="input" name="buscarproducto" placeholder="  ¿Que  buscas?">
-      <div class="carrito">
-        <img src="img/carrito.png" alt="carrito" class="iconos">
-        <p>Carrito</p>
+<body >
+  <header class="container-fluid ">
+    <div class="row cabecera align-items-center">
+      <div class="col-md-3">
+        <img src="img/Logo.png" alt="J-KADI SOFT" class="logo">
       </div>
+      <div class="col-md-1">
+        <h1 class="textoLogo">Lo mejor para ti</h1>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search">
+          <button class="btn btn-outline-secondary nacho" type="submit">
+            <img src="img/lupa.png" alt="Lupa" width="30px" height="30px">
+          </button>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <!-- <img src="img/carrito.png" alt="Ecu" class="iconos">-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 24 24"
+             stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+
+      </div>
+      <div class="col-md-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+             class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+        </svg>
+
+      </div>
+    </div>
   </header>
 
-  <div class="contenedorproductos">
-    <div class="productos">
-        <img src="img/P1.png" alt="producto" class="imgproduct">
-        <p>$40</p>
+  <div class="container flex_container">
+    <div class="card" >
+      <img src="img/P1.png" class="card-img-top imgproduct" alt="Camiseta barcelona">
+      <div class="card-body">
+        <h5 class="card-title">Camiseta Barcelona</h5>
+        <p class="card-text">Siente la pasión del fútbol con la camiseta oficial del FC Barcelona</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/camisetaBarca.html')">Comprar ahora</a>
+      </div>
     </div>
+    <div class="card " >
+      <img src="img/balon.png" class="card-img-top imgproduct" alt="Balon de futbol">
+      <div class="card-body flex-column">
+        <h5 class="card-title">Balón de Fútbol Trionda</h5>
+        <p class="card-text">Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!</p>
+        <a href="#" class="btn btn-custom " onclick="window.open('/DesarolloJ-KADI-soft/balon.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card " >
+      <img src="img/cuerdasaltar.png" class="card-img-top imgproduct" alt="Cuerdas de saltar">
+      <div class="card-body">
+        <h5 class="card-title">Cuerda de saltar</h5>
+        <p class="card-text">Mejora tu agilidad y resistencia con la cuerda de saltar de alta velocidad.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/cuerdassaltar.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card " >
+      <img src="/img/gorradeportiva.png" class="card-img-top imgproduct" alt="Gorradeportiva">
+      <div class="card-body">
+        <h5 class="card-title">Gorra deportiva</h5>
+        <p class="card-text">Protege tu cabeza con estilo mientras entrenas con nuestra gorra deportiva.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/gorra.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card " >
+      <img src="img/legginsdeportivos.png" class="card-img-top" alt="Leggins deportivo">
+      <div class="card-body">
+        <h5 class="card-title">Leggings Deportivos</h5>
+        <p class="card-text">Confort y estilo en cada movimiento con nuestros leggins deportivos.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/leggingsdeportivos.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card " >
+      <img src="img/ligaselasticas.png" class="card-img-top imgproduct" alt="Ligas elasticas">
+      <div class="card-body">
+        <h5 class="card-title">Ligas Elásticas</h5>
+        <p class="card-text">Maximiza tu entrenamiento con nuestras resistentes ligas elásticas.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/ligaselastivas.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card " >
+      <img src="img/mancuernas.png" class="card-img-top imgproduct" alt="mancuernas">
+      <div class="card-body">
+        <h5 class="card-title">Mancuernas</h5>
+        <p class="card-text">Fortalece tu cuerpo con nuestras mancuernas de alta calidad.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/mancuernas.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card " >
+      <img src="img/mediasDepor.png" class="card-img-top imgproduct" alt="medias deportiva">
+      <div class="card-body">
+        <h5 class="card-title">Medias deportivas</h5>
+        <p class="card-text">Comodidad y soporte en cada paso con nuestras medias deportivas.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/mediasdeportivas.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card " >
+      <img src="img/mochi.png" class="card-img-top imgproduct" alt="mochila">
+      <div class="card-body">
+        <h5 class="card-title">Mochila</h5>
+        <p class="card-text">Lleva todo lo que necesitas con nuestra mochila deportiva de alto rendimiento.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/Mochila.html')">Comprar ahora</a>
+      </div>
+    </div>
+    <div class="card" >
+      <img src="img/termo.png" class="card-img-top imgproduct" alt="termos">
+      <div class="card-body">
+        <h5 class="card-title">Termo</h5>
+        <p class="card-text">Mantén tu bebida fresca y lista para el entrenamiento con nuestro termo deportivo.</p>
+        <a href="#" class="btn btn-custom" onclick="window.open('/DesarolloJ-KADI-soft/termo.html')">Comprar ahora</a>
+      </div>
+    </div>
+
+
   </div>
+  <footer class="container-fluid">
+    <div class="row">
+      <h1>J-KADI SOFT</h1>
+    </div>
+    <div class="row">
+      <p>📧 Grupo3@jkadisoft.com</p>
+      <p>📍 Quito, Ecuador</p>
+      <p>📱 +593 98 472 3243</p>
+    </div>
+    <p style="Color:white"> Redes sociales</p>
+
+    <img  class="footer_img" src="img/Facebook.png" onclick="window.open('https://www.facebook.com/')" style="align-items: center;" alt="Facebook" width="50px" height="50px">
+    <img class="footer_img " src="img/Insta.png" onclick="window.open('https://www.instagram.com/aeipuceuio')" style="display: inline-block; margin: 0 10px;" alt="Instagram" width="50px" height="50px">
+    <img src="img/Twitter.png" onclick="window.open('https://x.com/')" style="align-items: center;" alt="Twitter" width="50px" height="50px">
+    <div class="row">
+      <p class="copyright">&copy; 2024 J-KADI SOFT</p>
+    </div>
+  </footer>
 
 </body>
 </html>
