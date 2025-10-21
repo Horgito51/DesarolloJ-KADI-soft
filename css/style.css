@@ -157,6 +157,53 @@ footer {
 
 }
 
+.anim-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anim-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.descuento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color:#05202C;
+  color: black;  /* Color del texto */
+  font-family: 'Copperplate Gothic Light';
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.descuento p {
+  margin: 0;  /* Elimina márgenes alrededor del párrafo */
+}
+
+.regisboton{
+  width: 15%;
+  height: 80%;
+  background-color: black;
+  font-family: 'Copperplate Gothic Light';
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.regisboton:hover{
+  transform: translateY(-3px);
+  text-decoration: underline;
+
+
+}
+
+
 .dashContainer{
   text-align: center;
 
