@@ -204,21 +204,27 @@ textarea {
 
 /* Anahí */
 
-
-
-
-.imgproduct{
-  width: 250px;
-  height: 250px;
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
 }
 
-.cuerpo{
-  background-color:#052659;
+.card-text {
+  flex-grow: 1;
+  text-align: justify;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  min-height: 100px; /* Altura mínima para descripciones */
+  max-height: 120px; /* Altura máxima */
+  overflow: hidden;
+  margin-bottom: 15px;
 }
-.producto{
-  width: 250px;
-  padding: 10px 20px;
-}
+
+
 .flex_container{
   display: flex;
   flex-wrap: wrap;
@@ -229,14 +235,44 @@ textarea {
   margin-bottom: 20px;
   margin-top: 20px;
   justify-content: center;
+  align-items: stretch;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 250px;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Si quieres cambiar la sombra al hacer hover */
+.card.shadow-sm:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.25) !important;
+}
 .btn-custom.btn {
   background-color: #283b70; /* Color azul */
-  color: #ffffff;              /* Texto en blanco */
+  color: #e8e3e3;              /* Texto en blanco */
   border: none;              /* Eliminar borde */
   padding: 10px 20px;        /* Relleno interno */
 
+}
+
+.imgproduct{
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* Mantiene la proporción de la imagen */
+  padding: 10px;
 }
 /* ==========================================================================
    Author's custom styles
