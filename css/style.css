@@ -163,12 +163,13 @@ footer {
 }
 
 .anim-img {
+  padding:1px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .anim-img:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -235,7 +236,7 @@ footer {
 
 .pupo{
   grid-column:1;
-  grid-row: 1/4;
+  grid-row: 1/3;
 }
 
 
