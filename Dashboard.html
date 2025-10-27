@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Camista BSC</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-
+  <script src="js/bootstrap.bundle.js"></script>
 
 </head>
 <body>
@@ -51,26 +51,54 @@
 
   </div>
 </header>
-<!-- Fin cabecera -->
+
 
 <div class="presentacion">
   <div class="pupo">
-    <img  class='anim-img' src="img/Pupillos.gif" alt="Pupillo" width=100% height=700px>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="img/Pupillos.gif" alt="First slide" style="height: 800px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/Pupos2.gif" alt="Second slide" style="height: 800px; object-fit: cover;">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/Zapato2.gif" alt="Third slide" style="height: 800px; object-fit: cover;">
+        </div>
+      </div>
+      <!-- Botones de navegación -->
+      <a class="carousel-control-prev" href="#" role="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="carousel-control-next" href="#" role="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+    </div>
+  </div>
+
+
+  <div>
+    <img class="anim-img" src="img/chica.png" alt="Pupillo" style="width: 100%; height: 400px; object-fit: cover;">
   </div>
   <div>
-    <img  class='anim-img' src="img/adiddas.gif" alt="adiddas" width=310px height=350px>
+    <img class="anim-img" src="img/chico.png" alt="Pupillo" style="width: 100%; height: 400px; object-fit: cover;">
   </div>
   <div>
-    <img class='anim-img'  src="img/Camiseta.gif" alt="Camiseta" width=310px height=350px>
+    <img class="anim-img" src="img/pareja.png" alt="Camiseta" style="width: 100%; height: 400px; object-fit: cover;">
   </div>
   <div>
-    <img class='anim-img'  src="img/hoodies.gif" alt="Hoodie" width=310px height=350px>
-  </div>
-  <div>
-    <img class='anim-img' src="img/pantalon.gif" alt="Pantalon" width=310px height=350px>
+    <img class="anim-img" src="img/grupo.png" alt="Hoodie" style="width: 100%; height: 400px; object-fit: cover;">
   </div>
 
 </div>
+
+
+
+
+
 <div class="descuento">
   <p style="color: white;">Compra ahora y recibe un 20% de descuento</p>
   <a href="registro.html" class="regisboton">
@@ -116,6 +144,74 @@
   <div class="row">
     <p class="copyright">&copy; 2024 J-KADI SOFT</p>
   </div>
+  <script>
+    let productos=[{
+    id:1,
+      producto:'Computadora',
+      stock:10,
+      precio:1000,
+      description:'Computadora i9 13th,40gb ram, 1tb sdd',
+      onStock:true,
+    },
+      {id:2,
+        producto:'Computadora gamer',
+        stock:10,
+        precio:5000,
+        description:'Computadora gamer',
+        onStock:true,
+      },
+    {id:3,
+    producto:'Celular',
+    stock:10,
+    precio:50,
+    description:'Celular',
+      onStock:false,
+    },
+      {
+        id: 4,
+        producto: 'Tablet',
+        stock: 10,
+        precio: 500,
+        onStock:false,
+
+      },{
+      id: 5,
+        producto: 'Cargador',
+        stock: 10,
+        precio: 12,
+        description:'Cargador de computadora',
+        onStock:true,
+      }];
+
+
+    function procesar(item) {
+      return new Promise((resolve, reject) => {
+          if (item.onStock) {
+            console.log("Producto: " + item.producto + "\n stock: " + item.stock + "\n precio: " + item.precio + "\nsubtotal: " + (item.stock * item.precio) + "\n description: " + item.description);
+          } else {
+            reject("Sin stock");
+            console.warn("Sin stock "+item.producto);
+          }
+      });
+    }
+
+    async function comprarProducto(producto){
+      try {
+        const verPro=await procesar(producto);
+        console.log("Verificado");
+        const subtotal=producto.precio*producto.stock;
+        console.log(subtotal);
+      }catch(error){
+        console.log("Error");
+      }
+    }
+
+    comprarProducto(productos[0]);
+
+    const price= (qt,price) => price*qt;
+    console.log('precio');
+    console.log('el precio total es: ' +price(10,5));
+  </script>
 </footer>
 
 
