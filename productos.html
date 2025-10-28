@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NachoSoft</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
@@ -25,13 +24,13 @@
 <!--Cuerpo del trabajo-->
   <header class="container-fluid ">
     <div class="row cabecera align-items-center">
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-2">
         <img src="img/Logo.png" alt="J-KADI SOFT" class="logo">
       </div>
-      <div class="col-md-1">
+      <div class="col-md-1 col-sm-1">
         <h1 class="textoLogo">Lo mejor para ti</h1>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-3">
         <div class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search">
           <button class="btn btn-outline-secondary nacho" type="submit">
@@ -39,7 +38,7 @@
           </button>
         </div>
       </div>
-      <div class="col-md-1">
+      <div class="col-md-1 col-sm-1">
         <!-- <img src="img/carrito.png" alt="Ecu" class="iconos">-->
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 24 24"
              stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -48,7 +47,7 @@
         </svg>
 
       </div>
-      <div class="col-md-1">
+      <div class="col-md-1 col-sm-1">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
              class="bi bi-person-circle" viewBox="0 0 16 16">
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -86,7 +85,7 @@
       </div>
     </div>
     <div class="card " >
-      <img src="/img/gorradeportiva.png" class="card-img-top imgproduct" alt="Gorradeportiva">
+      <img src="/img/gorrita.png" class="card-img-top imgproduct" alt="Gorradeportiva">
       <div class="card-body">
         <h5 class="card-title">Gorra deportiva</h5>
         <p class="card-text">Protege tu cabeza con estilo mientras entrenas con nuestra gorra deportiva.</p>
@@ -162,6 +161,74 @@
       <p class="copyright">&copy; 2024 J-KADI SOFT</p>
     </div>
   </footer>
+<script>
+  let productos=[{
+    id:1,
+    producto:'Computadora',
+    stock:10,
+    precio:1000,
+    description:'Computadora i9 13th,40gb ram, 1tb sdd',
+    onStock:true,
+  },
+    {id:2,
+      producto:'Computadora gamer',
+      stock:10,
+      precio:5000,
+      description:'Computadora gamer',
+      onStock:true,
+    },
+    {id:3,
+      producto:'Celular',
+      stock:10,
+      precio:50,
+      description:'Celular',
+      onStock:false,
+    },
+    {
+      id: 4,
+      producto: 'Tablet',
+      stock: 10,
+      precio: 500,
+      onStock:false,
+
+    },{
+      id: 5,
+      producto: 'Cargador',
+      stock: 10,
+      precio: 12,
+      description:'Cargador de computadora',
+      onStock:true,
+    }];
+
+
+  function procesar(item) {
+    return new Promise((resolve, reject) => {
+      if (item.onStock) {
+        console.log("Producto: " + item.producto + "\n stock: " + item.stock + "\n precio: " + item.precio + "\nsubtotal: " + (item.stock * item.precio) + "\n description: " + item.description);
+      } else {
+        reject("Sin stock");
+        console.warn("Sin stock "+item.producto);
+      }
+    });
+  }
+
+  async function comprarProducto(producto){
+    try {
+      const verPro=await procesar(producto);
+      console.log("Verificado");
+      const subtotal=producto.precio*producto.stock;
+      console.log(subtotal);
+    }catch(error){
+      console.log("Error");
+    }
+  }
+
+  comprarProducto(productos[0]);
+
+  const price= (qt,price) => price*qt;
+  console.log('precio');
+  console.log('el precio total es: ' +price(10,5));
+</script>
 
 
 <script>
