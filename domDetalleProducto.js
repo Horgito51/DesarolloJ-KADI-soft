@@ -211,7 +211,7 @@ function generarHTMLDetalleProducto(productos){
             opcion.valores.forEach(valor => {
                 inicio += `<option value='${valor}'>${valor}</option>`;
             });
-            opciones += `<label for='${keys}'>${opcion.label}</label>` +
+            opciones += `<label for='${keys}'><b>${opcion.label}</b></label>` +
             `<select class='form-select g3select' name='${keys}' id='${keys}'>` +
             inicio +
             "</select>" +
@@ -236,7 +236,7 @@ function generarHTMLDetalleProducto(productos){
     `<h1>${productos.tittle}</h1>` +
     `<p><b>Precio:</b> <big>$${productos.precio}</big></p>` +
     `<p><b>Marca:</b> ${productos.marca}</p>` +
-    "<label for='cantidad'>Cantidad:</label>" +
+    "<label for='cantidad'><b>Cantidad:</b></label>" +
     `<input type='number' id='cantidad' name='cantidad' min='1' max='${productos.stock}' value='1'>` +
     "<br><br>" +
     opciones +
