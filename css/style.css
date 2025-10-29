@@ -268,11 +268,12 @@ h2 {
 
 }
 
-.pupo{
-  grid-column:1;
-  grid-row: 1/3;
+.pupo {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  overflow: hidden; /* evita desbordes */
+  height: 100vh; /* usa toda la altura visible de la pantalla */
 }
-
 
 
 fieldset {
@@ -359,11 +360,11 @@ svg {
   width: 150px;
   height: 40px;
 }
-.imgproduct{
+.imgproduct {
   width: 100%;
-  height: 200px;
-  object-fit: cover; /* Mantiene la proporción de la imagen */
-
+  height: 100%;
+  object-fit: cover; /* llena el div sin deformar */
+  display: block;
 }
 /* ==========================================================================
    Author's custom styles
