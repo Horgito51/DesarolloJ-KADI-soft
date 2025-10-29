@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,15 +10,19 @@
 
 
 </head>
+
 <body>
+  <!-- Comienzo cabecera -->
 <!-- Comienzo cabecera -->
 <header class="container-fluid ">
   <div class="row cabecera align-items-center">
-    <div class="col-md-3">
+    <div class="col-md-3 " style="margin-left: auto;">
       <img src="img/Logo.png" alt="J-KADI SOFT" class="logo">
     </div>
     <div class="col-md-1">
-      <h1 class="textoLogo">Lo mejor para ti</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
     </div>
     <div class="col-md-6">
       <div class="d-flex">
@@ -37,63 +42,97 @@
 
     </div>
     <div class="col-md-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
-           class="bi bi-person-circle" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-        <path fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-      </svg>
-
+      <a href="login.html" style="text-decoration: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white"
+             class="bi bi-person-circle" viewBox="0 0 16 16" style="cursor: pointer;">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468
+            11.37C3.242 11.226 4.805 10 8 10s4.757 1.225
+            5.468 2.37A7 7 0 0 0 8 1" />
+        </svg>
+      </a>
     </div>
+
   </div>
 </header>
-<!-- Fin cabecera -->
+  <!-- Fin cabecera -->
 
+  <!--Mensaje al añadir el carrito -->
 
-
-<section class="container-fluid">
-  <div class="row">
-    <div class ="col-md-6 d-flex justify-content-center align-items-center">
-      <img src="img/P1.png" width="420px" height="420px" alt="Barcita">
-    </div>
-    <div class="col-md-4">
-      <h1>Camiseta FC Barcelona 2014/2015 - Local Nike Qatar Airways</h1>
-      <p><b>Precio:</b> <big>$40</big></p>
-      <p><b>Marca:</b> Nike</p>
-      <label for="tallas">Talla</label>
-      <select  class="form-select g3select"  name="Tallas" id="tallas">
-        <option value="">Seleccione</option>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-      </select>
-      <p><b>Tipo de Tejido:</b>Poliester Dri-FIT</p>
-      <p><b>Origen:</b> España/FC Barcelona</p>
-      <button class="btn btn-primary" type="button">Añadir Carrito</button>
-
-    </div>
+  <div id="alerta" class="alert alert-success" role="alert" style="display: none;">
+    <h4 class="alert-heading">Producto añadido</h4>
+    <p>El producto se ha añadido correctamente a tu carrito.</p>
   </div>
+
+  <script>
+    function añadircarrito() {
+      let carrito = document.getElementById("alerta");
+      carrito.style.display = "block";
+      setTimeout(function () {
+        carrito.style.display = "none";
+      }, 3000)
+    }
+
+
+  </script>
+
+
+  <!--fin del mensaje del añadir al carrito -->
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="img/P1.png" width="420px" height="420px" alt="Barcita">
+      </div>
+      <div class="col-md-4">
+        <h1>Camiseta FC Barcelona 2014/2015 - Local Nike Qatar Airways</h1>
+        <p><b>Precio:</b> <big>$40</big></p>
+        <p><b>Marca:</b> Nike</p>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="7">
+        <br><br>
+        <label for="tallas">Talla</label>
+        <select class="form-select g3select" name="Tallas" id="tallas">
+          <option value="">Seleccione</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <br>
+
+        <p><b>Tipo de Tejido:</b>Poliester Dri-FIT</p>
+        <p><b>Origen:</b> España/FC Barcelona</p>
+        <button onclick="añadircarrito()" class="btn btn-primary" type="button">Añadir Carrito</button>
+
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
   </section>
 
-<footer class="container-fluid">
-  <div class="row">
-    <h1>J-KADI SOFT</h1>
-  </div>
-  <div class="row">
-    <p>📧 Grupo3@jkadisoft.com</p>
-    <p>📍 Quito, Ecuador</p>
-    <p>📱 +593 98 472 3243</p>
-  </div>
-  <p style="Color:white"> Redes sociales</p>
+  <footer class="container-fluid">
+    <div class="row">
+      <h1>J-KADI SOFT</h1>
+    </div>
+    <div class="row">
+      <p>📧 Grupo3@jkadisoft.com</p>
+      <p>📍 Quito, Ecuador</p>
+      <p>📱 +593 98 472 3243</p>
+    </div>
+    <p style="Color:white"> Redes sociales</p>
 
-  <img  class="footer_img" src="img/Facebook.png" onclick="window.open('https://www.facebook.com/')" style="align-items: center;" alt="Facebook" width="50px" height="50px">
-  <img class="footer_img " src="img/Insta.png" onclick="window.open('https://www.instagram.com/aeipuceuio')" style="display: inline-block; margin: 0 10px;" alt="Instagram" width="50px" height="50px">
-  <img src="img/Twitter.png" onclick="window.open('https://x.com/')" style="align-items: center;" alt="Twitter" width="50px" height="50px">
-  <div class="row">
-    <p class="copyright">&copy; 2024 J-KADI SOFT</p>
-  </div>
-</footer>
+    <img class="footer_img" src="img/Facebook.png" onclick="window.open('https://www.facebook.com/')"
+      style="align-items: center;" alt="Facebook" width="50px" height="50px">
+    <img class="footer_img " src="img/Insta.png" onclick="window.open('https://www.instagram.com/aeipuceuio')"
+      style="display: inline-block; margin: 0 10px;" alt="Instagram" width="50px" height="50px">
+    <img src="img/Twitter.png" onclick="window.open('https:x.com/')" style="align-items: center;" alt="Twitter"
+      width="50px" height="50px">
+    <div class="row">
+      <p class="copyright">&copy; 2024 J-KADI SOFT</p>
+    </div>
+  </footer>
 
 </body>
 
