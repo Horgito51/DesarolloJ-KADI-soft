@@ -10,14 +10,16 @@
 <body>
 
 <!-- Comienza la cabecera -->
-
+<!-- Comienzo cabecera -->
 <header class="container-fluid ">
   <div class="row cabecera align-items-center">
-    <div class="col-md-3">
+    <div class="col-md-3 " style="margin-left: auto;">
       <img src="img/Logo.png" alt="J-KADI SOFT" class="logo">
     </div>
     <div class="col-md-1">
-      <h1 class="textoLogo">Lo mejor para ti</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
     </div>
     <div class="col-md-6">
       <div class="d-flex">
@@ -29,7 +31,7 @@
     </div>
     <div class="col-md-1">
       <!-- <img src="img/carrito.png" alt="Ecu" class="iconos">-->
-      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none" viewBox="0 0 24 24"
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 24 24"
            stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round"
               d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
@@ -37,17 +39,20 @@
 
     </div>
     <div class="col-md-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-           class="bi bi-person-circle" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-        <path fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-      </svg>
-
+      <a href="login.html" style="text-decoration: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white"
+             class="bi bi-person-circle" viewBox="0 0 16 16" style="cursor: pointer;">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468
+            11.37C3.242 11.226 4.805 10 8 10s4.757 1.225
+            5.468 2.37A7 7 0 0 0 8 1" />
+        </svg>
+      </a>
     </div>
+
   </div>
 </header>
-
 <!-- Fin de la cabecera -->
 
 <section class="container-fluid">
@@ -62,6 +67,9 @@
       <p><b>Material:</b>Acero inoxidable de alta calidad</p>
       <p><b>Capacidad: </b>500ml</p>
       <p><b>Origen:</b> Ecuador/Quito</p>
+              <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="7">
+        <br><br>
       <button class="btn btn-primary" type="button">Añadir Carrito</button>
     </div>
   </div>
