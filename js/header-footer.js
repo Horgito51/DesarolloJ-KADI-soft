@@ -4,8 +4,11 @@ let header=document.createElement('div');
 header.innerHTML=`
  <div class="row cabecera align-items-center">
     <div class="col-md-3 " style="margin-left: auto;">
+    <a href="Dashboard.html">
       <img src="img/Logo.png" alt="J-KADI SOFT" class="logo">
+    </a>
     </div>
+
     <div class="col-md-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
