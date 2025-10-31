@@ -22,176 +22,21 @@
 </head>
 <body >
 <!--Cuerpo del trabajo-->
-<header class="container-fluid " >
-  <div id="head"></div>
-</header>
-<!-- Fin cabecera -->
+  <header class="container-fluid ">
+    <div id="head"></div>
+  </header>
 
-  <div class="container flex_container">
-    <div class="card" >
-      <img src="img/P1.png" class="card-img-top imgproduct" alt="Camiseta barcelona">
-      <div class="card-body">
-        <h5 class="card-title">Camiseta Barcelona</h5>
-        <p class="card-text">Siente la pasión del fútbol con la camiseta oficial del FC Barcelona</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/camisetaBarca.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="img/balon.png" class="card-img-top imgproduct" alt="Balon de futbol">
-      <div class="card-body flex-column">
-        <h5 class="card-title">Balón de Fútbol Trionda</h5>
-        <p class="card-text">Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!</p>
-        <a href="#" class="btn btn-custom " onclick="window.open('/balon.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="img/cuerdasaltar.png" class="card-img-top imgproduct" alt="Cuerdas de saltar">
-      <div class="card-body">
-        <h5 class="card-title">Cuerda de saltar</h5>
-        <p class="card-text">Mejora tu agilidad y resistencia con la cuerda de saltar de alta velocidad.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/cuerdassaltar.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="/img/gorrita.png" class="card-img-top imgproduct" alt="Gorradeportiva">
-      <div class="card-body">
-        <h5 class="card-title">Gorra deportiva</h5>
-        <p class="card-text">Protege tu cabeza con estilo mientras entrenas con nuestra gorra deportiva.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/gorra.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="img/legginsdeportivos.png" class="card-img-top" alt="Leggins deportivo">
-      <div class="card-body">
-        <h5 class="card-title">Leggings Deportivos</h5>
-        <p class="card-text">Confort y estilo en cada movimiento con nuestros leggins deportivos.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('legginsdeportivos.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="img/ligaselasticas.png" class="card-img-top imgproduct" alt="Ligas elasticas">
-      <div class="card-body">
-        <h5 class="card-title">Ligas Elásticas</h5>
-        <p class="card-text">Maximiza tu entrenamiento con nuestras resistentes ligas elásticas.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/ligaselastivas.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="img/mancuernas.png" class="card-img-top imgproduct" alt="mancuernas">
-      <div class="card-body">
-        <h5 class="card-title">Mancuernas</h5>
-        <p class="card-text">Fortalece tu cuerpo con nuestras mancuernas de alta calidad.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/mancuernas.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="img/mediasDepor.png" class="card-img-top imgproduct" alt="medias deportiva">
-      <div class="card-body">
-        <h5 class="card-title">Medias deportivas</h5>
-        <p class="card-text">Comodidad y soporte en cada paso con nuestras medias deportivas.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/mediasdeportivas.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card " >
-      <img src="img/mochi.png" class="card-img-top imgproduct" alt="mochila">
-      <div class="card-body">
-        <h5 class="card-title">Mochila</h5>
-        <p class="card-text">Lleva todo lo que necesitas con nuestra mochila deportiva de alto rendimiento.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/Mochila.html')">Comprar ahora</a>
-      </div>
-    </div>
-    <div class="card" >
-      <img src="img/termo.png" class="card-img-top imgproduct" alt="termos">
-      <div class="card-body">
-        <h5 class="card-title">Termo</h5>
-        <p class="card-text">Mantén tu bebida fresca y lista para el entrenamiento con nuestro termo deportivo.</p>
-        <a href="#" class="btn btn-custom" onclick="window.open('/termo.html')">Comprar ahora</a>
-      </div>
-    </div>
+  <div id="products" class="container"></div>
 
-
-  </div>
-  <footer class="container-fluid">
+  <footer class="container-fluid" style="margin-top: 50px;">
     <div id="foot"></div>
+
   </footer>
 
 
+<script src="js/domProductos.js"></script>
+<script src="js/header-footer.js"></script>
 
-<script>
-  let productos=[{
-    id:1,
-    producto:'Computadora',
-    stock:10,
-    precio:1000,
-    description:'Computadora i9 13th,40gb ram, 1tb sdd',
-    onStock:true,
-  },
-    {id:2,
-      producto:'Computadora gamer',
-      stock:10,
-      precio:5000,
-      description:'Computadora gamer',
-      onStock:true,
-    },
-    {id:3,
-      producto:'Celular',
-      stock:10,
-      precio:50,
-      description:'Celular',
-      onStock:false,
-    },
-    {
-      id: 4,
-      producto: 'Tablet',
-      stock: 10,
-      precio: 500,
-      onStock:false,
-
-    },{
-      id: 5,
-      producto: 'Cargador',
-      stock: 10,
-      precio: 12,
-      description:'Cargador de computadora',
-      onStock:true,
-    }];
-
-
-  function procesar(item) {
-    return new Promise((resolve, reject) => {
-      if (item.onStock) {
-        console.log("Producto: " + item.producto + "\n stock: " + item.stock + "\n precio: " + item.precio + "\nsubtotal: " + (item.stock * item.precio) + "\n description: " + item.description);
-      } else {
-        reject("Sin stock");
-        console.warn("Sin stock "+item.producto);
-      }
-    });
-  }
-
-  async function comprarProducto(producto){
-    try {
-      const verPro=await procesar(producto);
-      console.log("Verificado");
-      const subtotal=producto.precio*producto.stock;
-      console.log(subtotal);
-    }catch(error){
-      console.log("Error");
-    }
-  }
-
-  comprarProducto(productos[0]);
-
-  const price= (qt,price) => price*qt;
-  console.log('precio');
-  console.log('el precio total es: ' +price(10,5));
-</script>
-
-
-<script>
-  let texto2 = "hola";
-  var texto1 = "mundo";
-  const texto3 = "!";
-</script>
 
 </body>
 <script src="js/header-footer.js"></script>
