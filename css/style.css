@@ -267,6 +267,9 @@ h2 {
   grid-auto-rows: minmax(100px, auto);
 
 }
+.nueva{
+  background-color: #0f5132;
+}
 
 .pupo {
   grid-column: 1;
