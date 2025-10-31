@@ -19,11 +19,9 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
   <title>Productos</title>
-
 </head>
 <body >
 <!--Cuerpo del trabajo-->
-
   <header class="container-fluid ">
     <div class="row cabecera align-items-center">
       <div class="col-md-3 col-sm-2">
@@ -61,9 +59,8 @@
     </div>
   </header>
 
-  <div  class="container flex_container">
-
-    <div  class="card" >
+  <div class="container flex_container">
+    <div class="card" >
       <img src="img/P1.png" class="card-img-top imgproduct" alt="Camiseta barcelona">
       <div class="card-body">
         <h5 class="card-title">Camiseta Barcelona</h5>
@@ -143,8 +140,9 @@
         <a href="#" class="btn btn-custom" onclick="window.open('/termo.html')">Comprar ahora</a>
       </div>
     </div>
-  </div>
 
+
+  </div>
   <footer class="container-fluid">
     <div class="row">
       <h1>J-KADI SOFT</h1>
@@ -163,7 +161,81 @@
       <p class="copyright">&copy; 2024 J-KADI SOFT</p>
     </div>
   </footer>
+<script>
+  let productos=[{
+    id:1,
+    producto:'Computadora',
+    stock:10,
+    precio:1000,
+    description:'Computadora i9 13th,40gb ram, 1tb sdd',
+    onStock:true,
+  },
+    {id:2,
+      producto:'Computadora gamer',
+      stock:10,
+      precio:5000,
+      description:'Computadora gamer',
+      onStock:true,
+    },
+    {id:3,
+      producto:'Celular',
+      stock:10,
+      precio:50,
+      description:'Celular',
+      onStock:false,
+    },
+    {
+      id: 4,
+      producto: 'Tablet',
+      stock: 10,
+      precio: 500,
+      onStock:false,
 
+    },{
+      id: 5,
+      producto: 'Cargador',
+      stock: 10,
+      precio: 12,
+      description:'Cargador de computadora',
+      onStock:true,
+    }];
+
+
+  function procesar(item) {
+    return new Promise((resolve, reject) => {
+      if (item.onStock) {
+        console.log("Producto: " + item.producto + "\n stock: " + item.stock + "\n precio: " + item.precio + "\nsubtotal: " + (item.stock * item.precio) + "\n description: " + item.description);
+      } else {
+        reject("Sin stock");
+        console.warn("Sin stock "+item.producto);
+      }
+    });
+  }
+
+  async function comprarProducto(producto){
+    try {
+      const verPro=await procesar(producto);
+      console.log("Verificado");
+      const subtotal=producto.precio*producto.stock;
+      console.log(subtotal);
+    }catch(error){
+      console.log("Error");
+    }
+  }
+
+  comprarProducto(productos[0]);
+
+  const price= (qt,price) => price*qt;
+  console.log('precio');
+  console.log('el precio total es: ' +price(10,5));
+</script>
+
+
+<script>
+  let texto2 = "hola";
+  var texto1 = "mundo";
+  const texto3 = "!";
+</script>
 
 </body>
 </html>
