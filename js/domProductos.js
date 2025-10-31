@@ -10,6 +10,12 @@ const listaProductos=[
     enlace:'/camisetaBarca.html'
   },
   {
+    imagen:'img/balon.png',
+    titulo:'Balón de Fútbol Trionda',
+    descripcion:'Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!',
+    enlace:'/balon.html'
+  },
+  {
     imagen: 'img/cuerdasaltar.png',
     titulo: 'Cuerda de saltar',
     descripcion: 'Mejora tu agilidad y resistencia con la cuerda de saltar de alta velocidad.',
