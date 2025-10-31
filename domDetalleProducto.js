@@ -1,4 +1,4 @@
-// productos.js
+
 let products = [
     {
         id: 1,
@@ -32,7 +32,7 @@ let products = [
         opciones: {
             talla: {
                 label: "Talla",
-                valores: ["5"]
+                valores: ["3: 58-60cm", "4: 63-66cm", "5: 68-70cm"]
             }
         },
         detalles: [
@@ -44,11 +44,17 @@ let products = [
         id: 3,
         tittle: "Cuerda de Saltar",
         descripcion: "Mejora tu agilidad y resistencia con esta cuerda de alta velocidad",
-        precio: 12,
+        precio: 16.99,
         stock: 7,
         enStock: true,
         imagen: "img/cuerdasaltar.png",
         marca: "FitGear",
+        opciones: {
+            largo: {
+                label: "Largo",
+                valores: ["2,8m", "1,5m", "1,95m"]
+            }
+        },
         detalles: [
             { label: "Material", valor: "Cable de acero recubierto con PVC" },
             { label: "Longitud", valor: "Ajustable hasta 3 metros" }
@@ -87,7 +93,7 @@ let products = [
         opciones: {
             talla: {
                 label: "Talla",
-                valores: ["Tobilleras", "Cuarto (quarter)", "Media caña", "Altas"]
+                valores: ["XS", "S", "M", "L"]
             },
             color: {
                 label: "Color",
@@ -188,7 +194,7 @@ let products = [
         precio: 15,
         stock: 7,
         enStock: true,
-        imagen: "img/termno.png",
+        imagen: "img/termo.png",
         marca: "ThermoFlask",
         detalles: [
             { label: "Material", valor: "Acero inoxidable de alta calidad" },
@@ -201,10 +207,10 @@ let products = [
 
 
 
-function generarHTMLDetalleProducto(productos){
-    let opciones="";
-    if(productos.opciones){
-        Object.keys(productos.opciones).forEach(keys =>{
+function generarHTMLDetalleProducto(productos) {
+    let opciones = "";
+    if (productos.opciones) {
+        Object.keys(productos.opciones).forEach(keys => {
             let opcion = productos.opciones[keys];
             let inicio = "<option value=''>Seleccione</option>";
 
@@ -212,12 +218,12 @@ function generarHTMLDetalleProducto(productos){
                 inicio += `<option value='${valor}'>${valor}</option>`;
             });
             opciones += `<label for='${keys}'><b>${opcion.label}</b></label>` +
-            `<select class='form-select g3select' name='${keys}' id='${keys}'>` +
-            inicio +
-            "</select>" +
-            "<br>";
+                `<select class='form-select g3select' name='${keys}' id='${keys}'>` +
+                inicio +
+                "</select>" +
+                "<br>";
 
-        }); 
+        });
 
 
     }
@@ -228,28 +234,113 @@ function generarHTMLDetalleProducto(productos){
         });
     }
 
-    return "<div class='row'>" +
-    "<div class='col-md-6 d-flex justify-content-center align-items-center'>" +
-    `<img src='${productos.imagen}' width='420px' height='420px' alt='${productos.tittle}'>` +
-    "</div>" +
-    "<div class='col-md-4'>" +
-    `<h1>${productos.tittle}</h1>` +
-    `<p><b>Precio:</b> <big>$${productos.precio}</big></p>` +
-    `<p><b>Marca:</b> ${productos.marca}</p>` +
-    "<label for='cantidad'><b>Cantidad:</b></label>" +
-    `<input type='number' id='cantidad' name='cantidad' min='1' max='${productos.stock}' value='1'>` +
-    "<br><br>" +
-    opciones +
-    detallesHTML +
-    `<button onclick='añadircarrito(${productos.id})' class='btn btn-primary' type='button'>Añadir Carrito</button>` +
-    "</div>" +
-    "<div class='col-md-2'>" +
-    "</div>" +
-    "</div>";
+    return "<div id='alerta'></div>" + "<div class='row'>" +
+        "<div class='col-md-6 d-flex justify-content-center align-items-center'>" +
+        `<img src='${productos.imagen}' width='420px' height='420px' alt='${productos.tittle}'>` +
+        "</div>" +
+        "<div class='col-md-4'>" +
+        `<h1>${productos.tittle}</h1>` +
+        `<p><b>Precio:</b> <big>$${productos.precio}</big></p>` +
+        `<p><b>Marca:</b> ${productos.marca}</p>` +
+        "<label for='cantidad'><b>Cantidad:</b></label>" +
+        `<input type='number' id='cantidad' name='cantidad' min='1' max='${productos.stock}' value='1'>` +
+        "<br><br>" +
+        opciones +
+        detallesHTML +
+        `<button onclick='añadircarrito()' class='btn btn-primary' type='button'>Añadir Carrito</button>` +
+        "</div>" +
+        "<div class='col-md-2'>" +
+        "</div>" +
+        "</div>";
 
 }
 
+function crearProducto() {
+    let camisetaBarcelona = document.getElementById("idCamisetaBarcelonaFC");
+    if (camisetaBarcelona) {
+        camisetaBarcelona.innerHTML = generarHTMLDetalleProducto(products[0]);
 
-let camisetaBarcelona = document.getElementById("camisetaBarcelonaFC");
-camisetaBarcelona.innerHTML=generarHTMLDetalleProducto(products[0]);
+    }
+    let balonFutbolMundial2026 = document.getElementById("idBalonDelMundial2026");
+    if (balonFutbolMundial2026) {
+        balonFutbolMundial2026.innerHTML = generarHTMLDetalleProducto(products[1]);
+    }
+    let cuerdasDeSaltar = document.getElementById("idCuerdaDeSaltar");
+    if (cuerdasDeSaltar) {
+        cuerdasDeSaltar.innerHTML = generarHTMLDetalleProducto(products[2]);
+    } let gorraDeportiva = document.getElementById("idGorraDeportiva");
+    if (gorraDeportiva) {
+        gorraDeportiva.innerHTML = generarHTMLDetalleProducto(products[3]);
+    } let legginsDeportivos = document.getElementById("idLeginsDeportivos");
+    if (legginsDeportivos) {
+        legginsDeportivos.innerHTML = generarHTMLDetalleProducto(products[4]);
+    } let ligasElasticas = document.getElementById("idLigasElasticas");
+    if (ligasElasticas) {
+        ligasElasticas.innerHTML = generarHTMLDetalleProducto(products[5]);
+    } let mancuernas = document.getElementById("idMancuernas");
+    if (mancuernas) {
+        mancuernas.innerHTML = generarHTMLDetalleProducto(products[6]);
+    } let mediasDeportivas = document.getElementById("idMediasDeportivas");
+    if (mediasDeportivas) {
+        mediasDeportivas.innerHTML = generarHTMLDetalleProducto(products[7]);
+    } let mochilaHoraDeAventura = document.getElementById("idMochilaHoraDeAventura");
+    if (mochilaHoraDeAventura) {
+        mochilaHoraDeAventura.innerHTML = generarHTMLDetalleProducto(products[8]);
+    } let termo = document.getElementById("idTermo");
+    if (termo) {
+        termo.innerHTML = generarHTMLDetalleProducto(products[9]);
+    }
+}
+
+
+
+function añadircarrito() {
+    let carrito = document.getElementById("alerta");
+
+    carrito.innerHTML = '<div class="alert alert-success" role="alert">' +
+        '<h4 class="alert-heading">Producto añadido</h4>' +
+        '<p>El producto se ha añadido correctamente a tu carrito.</p>' +
+        '</div>';
+
+    carrito.style.display = "block";
+    
+    setTimeout(function () {
+        carrito.style.display = "none";
+    }, 3000)
+}
+
+
+
+crearProducto();
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------------------
+
+/*<div id="alerta" class="alert alert-success" role="alert" style="display: none;">
+  <h4 class="alert-heading">Producto añadido</h4>
+  <p>El producto se ha añadido correctamente a tu carrito.</p>
+</div>
+
+<script>
+  function añadircarrito() {
+    let carrito = document.getElementById("alerta");
+    
+    carrito.style.display = "block";
+    setTimeout(function () {
+      carrito.style.display = "none";
+    }, 3000)
+  }*/
+
+
+
+
 

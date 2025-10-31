@@ -18,63 +18,12 @@
   <div id="head"></div>
 </header>
   <!-- Fin cabecera -->
+  </script> 
 
-  <!--Mensaje al añadir el carrito -->
-
-  <div id="alerta" class="alert alert-success" role="alert" style="display: none;">
-    <h4 class="alert-heading">Producto añadido</h4>
-    <p>El producto se ha añadido correctamente a tu carrito.</p>
-  </div>
-
-  <script>
-    function añadircarrito() {
-      let carrito = document.getElementById("alerta");
-      carrito.style.display = "block";
-      setTimeout(function () {
-        carrito.style.display = "none";
-      }, 3000)
-    }
+<section class="container-fluid" id="idCamisetaBarcelonaFC"></section>
 
 
-  </script>
 
-<section id="camisetaBarcelonaFC"></section>
-
-  <!--fin del mensaje del añadir al carrito -->
-  <!--
-  <section class="container-fluid">
-    <div class="row">
-      <div class="col-md-6 d-flex justify-content-center align-items-center">
-        <img src="img/P1.png" width="420px" height="420px" alt="Barcita">
-      </div>
-      <div class="col-md-4">
-        <h1>Camiseta FC Barcelona 2014/2015 - Local Nike Qatar Airways</h1>
-        <p><b>Precio:</b> <big>$40</big></p>
-        <p><b>Marca:</b> Nike</p>
-
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="7">
-        <br><br>
-        <label for="tallas">Talla</label>
-        <select class="form-select g3select" name="Tallas" id="tallas">
-          <option value="">Seleccione</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-        </select>
-        <br>
-
-        <p><b>Tipo de Tejido:</b>Poliester Dri-FIT</p>
-        <p><b>Origen:</b> España/FC Barcelona</p>
-        <button onclick="añadircarrito()" class="btn btn-primary" type="button">Añadir Carrito</button>
-
-      </div>
-      <div class="col-md-2">
-      </div>
-    </div>
-  </section>
--->
   <footer class="container-fluid">
     <div id="foot"></div>
   </footer>
