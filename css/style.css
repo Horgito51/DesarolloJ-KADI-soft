@@ -197,6 +197,47 @@ footer {
   margin: 0;  /* Elimina márgenes alrededor del párrafo */
 }
 
+/*-----------------------------------------------NACHO PRUEBA */
+.productosFila {
+  display: flex;
+  flex-wrap: nowrap; /* evita que bajen a otra línea */
+  overflow-x: auto; /* scroll horizontal si hay muchos */
+  gap: 20px;
+  padding: 10px;
+}
+
+.producto {
+  min-width: 250px;
+  flex: 0 0 auto; /* mantiene el ancho fijo */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+}
+
+.producto img {
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+}
+/*-----------------------------------------------------------------------*/
+.flexDetalletProducto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  justify-content: center; 
+  align-items: center; 
+  /**/
+
+  flex: 0 0 calc(20% - 10px);
+
+}
+
+
+
+
 .regisboton{
   width: 15%;
   height: 80%;
@@ -273,6 +314,9 @@ section div button {
   object-position: center;
   display: block;
 }
+
+
+
 
 h2 {
   margin-bottom: 20px;
@@ -385,9 +429,43 @@ svg {
   object-fit: cover; /* llena el div sin deformar */
   display: block;
 }
+
+
+
+/*Otros productos dentro de los detalles*/
+.productos-slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;   
+  padding: 10px;
+  background: linear-gradient(to bottom,#052659,white);
+
+}
+.otrosProductos{
+  height: 50px;
+  background-color: #052659;
+  color: rgb(178, 184, 202);
+  margin-bottom: 0%;
+
+  /*background: linear-gradient(to bottom,#052659,white);
+  */
+}
+
+.imgrecomendaciones{
+  width: 200px;
+  height: 200px;
+  object-fit: cover; 
+  display: block;
+}
+   .card {
+  overflow: visible ;
+  
+}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+   
 
 /* ==========================================================================
    Helper classes

@@ -67,7 +67,7 @@ const listaProductos=[
 for(const i of listaProductos) {
   const producto = document.createElement('div');
   producto.classList.add('card');
-  producto.innerHTML = `
+  producto.innerHTML =`
     <img src="${i.imagen}" class="card-img-top imgproduct" alt="${i.titulo}">
       <div class="card-body">
         <h5 class="card-title">${i.titulo}</h5>

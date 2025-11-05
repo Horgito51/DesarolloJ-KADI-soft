@@ -1,5 +1,5 @@
 
-let products = [
+const products = [
     {
         id: 1,
         tittle: "Camiseta FC Barcelona 2014/2015",
@@ -7,6 +7,7 @@ let products = [
         precio: 40,
         stock: 7,
         enStock: true,
+        enlace: '/camisetaBarca.html',
         imagen: "img/P1.png",
         marca: "Nike",
         opciones: {
@@ -27,6 +28,7 @@ let products = [
         precio: 34.99,
         stock: 7,
         enStock: true,
+        enlace: '/balon.html',
         imagen: "img/balon.png",
         marca: "Adidas style",
         opciones: {
@@ -47,6 +49,8 @@ let products = [
         precio: 16.99,
         stock: 7,
         enStock: true,
+        enlace: '/cuerdassaltar.html'
+        ,
         imagen: "img/cuerdasaltar.png",
         marca: "FitGear",
         opciones: {
@@ -69,6 +73,8 @@ let products = [
         enStock: true,
         imagen: "img/gorrita.png",
         marca: "ActiveWear Pro",
+        enlace: '/gorra.html'
+        ,
         opciones: {
             talla: {
                 label: "Talla",
@@ -88,6 +94,7 @@ let products = [
         precio: 32.99,
         stock: 7,
         enStock: true,
+        enlace: '/legginsdeportivos.html',
         imagen: "img/legginsdeportivos.png",
         marca: "FitFlow Activewear",
         opciones: {
@@ -113,6 +120,8 @@ let products = [
         precio: 9.99,
         stock: 7,
         enStock: true,
+        enlace: '/ligaselastivas.html',
+
         imagen: "img/ligaselasticas.png",
         marca: "FlexBand Pro",
         opciones: {
@@ -133,6 +142,8 @@ let products = [
         precio: 45,
         stock: 7,
         enStock: true,
+        enlace: '/mancuernas.html',
+
         imagen: "img/mancuernas.png",
         marca: "IronGrip Pro",
         opciones: {
@@ -154,6 +165,8 @@ let products = [
         precio: 9.99,
         stock: 7,
         enStock: true,
+        enlace: '/mediasdeportivas.html',
+
         imagen: "img/mediasDepor.png",
         marca: "ProSport",
         opciones: {
@@ -179,6 +192,8 @@ let products = [
         precio: 27,
         stock: 7,
         enStock: true,
+        enlace: '/Mochila.html',
+
         imagen: "img/mochi.png",
         marca: "Adventure Gear",
         detalles: [
@@ -194,6 +209,8 @@ let products = [
         precio: 15,
         stock: 7,
         enStock: true,
+        enlace: '/termo.html',
+
         imagen: "img/termo.png",
         marca: "ThermoFlask",
         detalles: [
@@ -251,9 +268,38 @@ function generarHTMLDetalleProducto(productos) {
         "</div>" +
         "<div class='col-md-2'>" +
         "</div>" +
-        "</div>";
+        "</div>" +
+        "<h1 class='otrosProductos'>Otros productos</h1>"
+
+        ;
 
 }
+
+const recomendados = document.getElementById("productosRecomendados");
+
+
+if(recomendados){
+recomendados.innerHTML = "";
+
+for (const i of products) {
+    const recomendados = document.getElementById("productosRecomendados");
+    recomendados.innerHTML += ` 
+    <div>
+        <div class="card  shadow-sm productosFila " onclick="window.open('${i.enlace}')">
+        <img src=${i.imagen}  class="card-img-top imgrecomendaciones" alt=${i.descripcion}>
+        <div class="card-body">
+            <h5 class="card-title">${i.tittle}</h5>
+            <p class="card-text">${i.descripcion}</p>
+            <p class="card-title">${i.precio}$</p>
+        </div>
+        </div>
+    </div>
+    `;
+}
+}
+
+
+
 
 function crearProducto() {
     let camisetaBarcelona = document.getElementById("idCamisetaBarcelonaFC");
@@ -303,7 +349,7 @@ function añadircarrito() {
         '</div>';
 
     carrito.style.display = "block";
-    
+
     setTimeout(function () {
         carrito.style.display = "none";
     }, 3000)
