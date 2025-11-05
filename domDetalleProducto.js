@@ -14,6 +14,10 @@ const products = [
             talla: {
                 label: "Talla",
                 valores: ["S", "M", "L", "XL"]
+            },
+            equipacion: {
+                label:"Equipacion",
+                valores:["Local","Visitante","tercera"]
             }
         },
         detalles: [
@@ -225,12 +229,11 @@ const products = [
 
 
 function generarHTMLDetalleProducto(productos) {
-    let opciones = "";
-    if (productos.opciones) {
-        Object.keys(productos.opciones).forEach(keys => {
-            let opcion = productos.opciones[keys];
-            let inicio = "<option value=''>Seleccione</option>";
-
+    let opciones = ""; // guardara el html del selector
+    if (productos.opciones) { // verifico si el producgto tiene opciones
+        Object.keys(productos.opciones).forEach(keys => {// saco las llaves de cada opcion 
+            let opcion = productos.opciones[keys]; // guardo el valor de cada llave 
+            let inicio = "<option value=''>Seleccione</option>";  // creo el rimer option 
             opcion.valores.forEach(valor => {
                 inicio += `<option value='${valor}'>${valor}</option>`;
             });
@@ -305,7 +308,6 @@ function crearProducto() {
     let camisetaBarcelona = document.getElementById("idCamisetaBarcelonaFC");
     if (camisetaBarcelona) {
         camisetaBarcelona.innerHTML = generarHTMLDetalleProducto(products[0]);
-
     }
     let balonFutbolMundial2026 = document.getElementById("idBalonDelMundial2026");
     if (balonFutbolMundial2026) {
