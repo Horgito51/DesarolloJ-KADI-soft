@@ -225,13 +225,13 @@ footer {
 }
 
 /*-----------------------------------------------NACHO PRUEBA */
-.productosFila {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 10px;
-}
+  .productosFila {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+  }
 
 .producto {
   min-width: 250px;
