@@ -17,10 +17,10 @@
   <h2>Inicio de sesión</h2>
 
   <div class="formulario">
-    <form id="formularioPrueba">
-      <input type="email" required id="Em" placeholder="Usuario" name="email">
-      <input type="password" required id="Pw" placeholder="Contraseña" name="password">
-
+    
+    <form id="formularioPrueba" novalidate>
+      <input type="email" id="Em" placeholder="Usuario" name="email">
+      <input type="password" id="Pw" placeholder="Contraseña" name="password">
 
       <div class="boton">
         <button type="submit">Iniciar sesión</button>
@@ -36,7 +36,6 @@
     </form>
   </div>
 
-  <!-- Aquí aparecerán “Enviando…” y luego el check animado con “Sesión iniciada” -->
   <div class="loading"></div>
 </div>
 
