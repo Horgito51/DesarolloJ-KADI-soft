@@ -23,7 +23,7 @@ header.innerHTML=`
       </div>
     </div>
     <div class="col-md-1 text-center">
-      <a href="/carrito" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
+      <a href="carrito.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center;">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none"
             viewBox="0 0 24 24" stroke="white" class="size-6">
           <path stroke-linecap="round" stroke-linejoin="round"

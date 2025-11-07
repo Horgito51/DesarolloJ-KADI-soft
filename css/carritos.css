@@ -1,0 +1,165 @@
+/* --- Contenedor principal --- */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* --- Item del carrito --- */
+.cart-item {
+  display: grid;
+  grid-template-columns: 180px 1fr 100px;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.cart-item img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+/* --- Detalles del producto --- */
+.cart-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-details h5 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.cart-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* --- Precio --- */
+.cart-price {
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #000;
+}
+
+/* --- Control de cantidad --- */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.quantity-control button {
+  background-color: #fff;
+  border: 1px solid #999;
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantity-control button:hover {
+  background: #f0f0f0;
+}
+
+.quantity-control input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #999;
+  height: 35px;
+  font-size: 1rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #333;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: #b30000;
+}
+
+/* --- Subtotal --- */
+.subtotal {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-top: 2px solid #000;
+  padding-top: 10px;
+  margin-top: 30px;
+}
+
+/* --- Botón Finalizar Compra --- */
+.checkout-btn {
+  display: block;
+  background-color: #0a3b64;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  margin: 25px auto 0;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #0f5aa1;
+}
+
+/* --- Adaptativo --- */
+@media (max-width: 992px) {
+  main {
+    padding: 20px 40px;
+  }
+
+  .cart-item {
+    grid-template-columns: 150px 1fr 90px;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cart-item img {
+    margin: 0 auto 10px;
+    max-width: 160px;
+  }
+
+  .cart-price {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .quantity-control {
+    justify-content: center;
+  }
+
+  .subtotal {
+    justify-content: center;
+    text-align: center;
+  }
+}
