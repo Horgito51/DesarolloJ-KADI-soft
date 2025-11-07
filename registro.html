@@ -17,31 +17,30 @@
   <h2>Crear cuenta</h2>
 
   <div class="formulario">
-    <label>
-      <input type="text" placeholder="Usuario" required>
-    </label>
-    <label>
-      <input type="email" placeholder="Correo electrónico" required>
-    </label>
-    <label>
-      <input type="password" placeholder="Contraseña" required>
-    </label>
-    <label>
-      <input type="password" placeholder="Verificar contraseña" required>
-    </label>
+    <!-- 🔹 Se agrega novalidate para usar validación jQuery -->
+    <form id="formularioRegistro" novalidate>
+      <input type="text" id="usuario" placeholder="Usuario" name="usuario">
+      <input type="email" id="correo" placeholder="Correo electrónico" name="correo">
+      <input type="password" id="password1" placeholder="Contraseña" name="password1">
+      <input type="password" id="password2" placeholder="Verificar contraseña" name="password2">
+
+      <div class="boton">
+        <button type="submit">Registrarse</button>
+      </div>
+
+      <div class="botonR">
+        <button type="button" class="btnR" onclick="window.location.href='login.html'">
+          Volver al inicio
+        </button>
+      </div>
+    </form>
   </div>
 
-  <div class="boton">
-    <button type="submit">Registrarse</button>
-  </div>
-
-  <div class="botonR">
-    <button type="button" class="btnR" onclick="window.location.href='login.html'">
-      Volver al inicio
-    </button>
-  </div>
+  <!-- Aquí aparecerán los mensajes de “Enviando…” y el check -->
+  <div class="loading"></div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/formularios.js"></script>
 </body>
 </html>
-
-
