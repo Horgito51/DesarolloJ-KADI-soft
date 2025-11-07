@@ -220,14 +220,15 @@ footer {
 }
 
 .descuento p {
-  margin: 0;  /* Elimina márgenes alrededor del párrafo */
+  margin: 0;
+    /* Elimina márgenes alrededor del párrafo */
 }
 
 /*-----------------------------------------------NACHO PRUEBA */
 .productosFila {
   display: flex;
-  flex-wrap: nowrap; 
-  overflow-x: auto; 
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 20px;
   padding: 10px;
 }
