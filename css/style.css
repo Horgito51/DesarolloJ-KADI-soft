@@ -226,8 +226,8 @@ footer {
 /*-----------------------------------------------NACHO PRUEBA */
 .productosFila {
   display: flex;
-  flex-wrap: nowrap; /* evita que bajen a otra línea */
-  overflow-x: auto; /* scroll horizontal si hay muchos */
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
   gap: 20px;
   padding: 10px;
 }
@@ -473,8 +473,7 @@ svg {
   color: rgb(178, 184, 202);
   margin-bottom: 0%;
 
-  /*background: linear-gradient(to bottom,#052659,white);
-  */
+
 }
 
 .imgrecomendaciones{
