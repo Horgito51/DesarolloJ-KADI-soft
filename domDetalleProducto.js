@@ -231,9 +231,9 @@
     function generarHTMLDetalleProducto(productos) {
         let opciones = ""; // guardara el html del selector
         if (productos.opciones) { // verifico si el producgto tiene opciones
-            Object.keys(productos.opciones).forEach(keys => {// saco las llaves de cada opcion 
-                let opcion = productos.opciones[keys]; // guardo el valor de cada llave 
-                let inicio = "<option value=''>Seleccione</option>";  // creo el rimer option 
+            Object.keys(productos.opciones).forEach(keys => {// saco las llaves de cada opcion
+                let opcion = productos.opciones[keys]; // guardo el valor de cada llave
+                let inicio = "<option value=''>Seleccione</option>";  // creo el rimer option
                 opcion.valores.forEach(valor => {
                     inicio += `<option value='${valor}'>${valor}</option>`;
                 });
@@ -286,7 +286,7 @@
 
         for (const i of products) {
             const recomendados = document.getElementById("productosRecomendados");
-            recomendados.innerHTML += ` 
+            recomendados.innerHTML += `
         <div>
             <div class="card  shadow-sm productosFila " onclick="window.open('${i.enlace}')">
             <img src=${i.imagen}  class="card-img-top imgrecomendaciones" alt=${i.descripcion}>
@@ -365,6 +365,12 @@
 
     $(document).ready(function () {
         $("#botonCarrito").click(function () {
+              Swal.fire({
+              title: "Añadido al carrito",
+              icon: "success",
+              draggable: true
+            });
+            /*
             $("#alerta").css("display","block");
 
             $("#alerta").html('<div class="alert alert-success" role="alert">' +
@@ -375,7 +381,7 @@
             setTimeout(function(){
                 $("#alerta").css("display","none");
             },3000)
-            
+              */
 
 
         })
@@ -403,7 +409,7 @@
     <script>
     function añadircarrito() {
         let carrito = document.getElementById("alerta");
-        
+
         carrito.style.display = "block";
         setTimeout(function () {
         carrito.style.display = "none";
