@@ -8,7 +8,7 @@ $(document).ready(function() {
     <div class="row cabecera align-items-center">
       <div class="col-md-3" style="margin-left: auto;">
         <a href="Dashboard.html">
-          <img src="img/Logo.png" alt="J-KADI SOFT" class="logo">
+          <img src="img/Logo.png" alt="J-KADI Sports" class="logo">
         </a>
       </div>
 
@@ -68,7 +68,7 @@ $(document).ready(function() {
         </div>
         <div class="row"></div>
         <p style="Color:white">Redes sociales</p>
-        <img class="footer_img" src="img/Fxacebook.png" onclick="window.open('https://www.facebook.com/')" style="align-items: center;" alt="Facebook" width="50px" height="50px">
+        <img class="footer_img" src="img/Facebook.png" onclick="window.open('https://www.facebook.com/')" style="align-items: center;" alt="Facebook" width="50px" height="50px">
         <img class="footer_img" src="img/Insta.png" onclick="window.open('https://www.instagram.com/aeipuceuio')" style="display: inline-block; margin: 0 10px;" alt="Instagram" width="50px" height="50px">
         <img src="img/Twitter.png" onclick="window.open('https://x.com/')" style="align-items: center;" alt="Twitter" width="50px" height="50px">
         <div class="row">
