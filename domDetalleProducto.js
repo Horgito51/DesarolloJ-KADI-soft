@@ -295,9 +295,6 @@ function addToCart(producto, qty, selected) {
 }
 
 
-// =========================================
-// TU FUNCIÓN DE DETALLE (solo 1 cambio en el botón)
-// =========================================
 function generarHTMLDetalleProducto(productos) {
     let opciones = ""; // guardara el html del selector
     if (productos.opciones) { // verifico si el producgto tiene opciones
