@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!cart.length) {
       cartList.innerHTML = `
         <div class="alert alert-info text-center">
-          <p>Tu carrito está vacío 🛒</p>
-          <small>Explora nuestros productos y añádelos al carrito desde las páginas de detalle.</small>
+          <p>Tu carrito está vacío</p>
+          <small>Explora nuestros productos.</small>
         </div>
       `;
       subtotalEl.textContent = fmt(0);
