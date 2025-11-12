@@ -4,9 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const CART_KEY = "cart";
 
-  // -------------------------------
   // Utilidades para el carrito
-  // -------------------------------
   function loadCart() {
     try {
       const raw = localStorage.getItem(CART_KEY);
@@ -27,9 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cart = loadCart();
 
-  // -------------------------------
   // Render del carrito
-  // -------------------------------
   function renderCart() {
     const cartList = $("#cart-list");
     const subtotalEl = $("#subtotal");
@@ -57,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const totalItem = p.price * p.qty;
       subtotal += totalItem;
 
-      // Mostrar opciones seleccionadas (si existen)
+      // Mostrar opciones seleccionadas
       let optsHTML = "";
       if (p.selectedOptions) {
         const opts = Object.entries(p.selectedOptions)
@@ -95,9 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkoutBtn.disabled = subtotal <= 0;
   }
 
-  // -------------------------------
   // Modificar cantidades
-  // -------------------------------
   function changeQty(variantId, delta) {
     const item = cart.find((it) => it.variantId === variantId);
     if (!item) return;
@@ -124,9 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   }
 
-  // -------------------------------
   // Delegación de eventos
-  // -------------------------------
   const cartList = $("#cart-list");
 
   if (cartList) {
@@ -150,9 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -------------------------------
   // Finalizar compra
-  // -------------------------------
   const checkoutBtn = $("#checkoutBtn");
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
@@ -160,21 +150,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.Swal?.fire) {
         Swal.fire({
           title: "¡Compra finalizada!",
-          text: "Gracias por comprar en J-KADI SPORTS 🏅",
+          text: "Gracias por comprar en J-KADI SPORTS",
           icon: "success"
         });
       } else {
         alert("Compra finalizada. ¡Gracias por comprar en J-KADI SPORTS!");
       }
-      // Si quieres vaciar el carrito después:
       // cart = [];
       // saveCart(cart);
       // renderCart();
     });
   }
 
-  // -------------------------------
   // Render inicial
-  // -------------------------------
   renderCart();
 });
