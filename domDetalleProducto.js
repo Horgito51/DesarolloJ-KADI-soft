@@ -334,7 +334,7 @@ function generarHTMLDetalleProducto(productos) {
         `<button id='botonCarrito' data-product-id='${productos.id}' class='btn btn-primary' type='button'>Añadir Carrito</button>` +
         "</div>" +
         "<div class='col-sm-12 col-md-3 col-lg-3' style='border: 1px solid #1a1a2e;'>" +
-        "<iframe src='/carrito.html' width='100%' height='100%' style='border:none;'></iframe>" +
+        "<iframe src='carrito.html' width='100%' height='100%' style='border:none;'></iframe>" +
         "</div>" +
         "</div>" +
         "<h1 class='otrosProductos'>Otros productos</h1>";
