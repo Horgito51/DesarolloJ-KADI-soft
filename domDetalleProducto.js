@@ -322,10 +322,10 @@ function generarHTMLDetalleProducto(productos) {
     }
 
     return "<div id='alerta' style='display:none;' ></div>" + "<div class='row'>" +
-        "<div class='col-md-6 d-flex justify-content-center align-items-center'>" +
+        "<div class='col-sm-12 col-md-6 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center'>" +
         `<img src='${productos.imagen}' width='420px' height='420px' alt='${productos.tittle}'>` +
         "</div>" +
-        "<div class='col-md-4'>" +
+        "<div class=' col-sm-12 col-md-4 col-lg-4'>" +
         `<h1>${productos.tittle}</h1>` +
         `<p><b>Precio:</b> <big>$${productos.precio}</big></p>` +
         `<p><b>Marca:</b> ${productos.marca}</p>` +
@@ -334,19 +334,15 @@ function generarHTMLDetalleProducto(productos) {
         "<br><br>" +
         opciones +
         detallesHTML +
-        // --------- CAMBIO: agrego data-product-id ----------
         `<button id='botonCarrito' data-product-id='${productos.id}' class='btn btn-primary' type='button'>Añadir Carrito</button>` +
-        // ----------------------------------------------------
         "</div>" +
-        "<div class='col-md-2'>" +
+        "<div class='col-sm-12 col-md-2 col-lg-2'>" +
         "</div>" +
         "</div>" +
         "<h1 class='otrosProductos'>Otros productos</h1>";
 }
 
-// =========================================
-// RECOMENDADOS (sin cambios de estructura)
-// =========================================
+
 const recomendados = document.getElementById("productosRecomendados");
 
 if (recomendados) {
@@ -368,9 +364,7 @@ if (recomendados) {
     }
 }
 
-// =========================================
-// CREAR PRODUCTO EN CADA PÁGINA (sin cambios)
-// =========================================
+
 function crearProducto() {
     let camisetaBarcelona = document.getElementById("idCamisetaBarcelonaFC");
     if (camisetaBarcelona) {
@@ -423,9 +417,7 @@ function añadircarrito() {
     }, 3000)
 }*/
 
-// =========================================
-// CLICK DEL BOTÓN (reemplazado para añadir al carrito)
-// =========================================
+
 $(document).ready(function () {
     $("#botonCarrito").off("click").on("click", function () {
         // 1) Identificar producto
