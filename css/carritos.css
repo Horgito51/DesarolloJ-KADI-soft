@@ -1,8 +1,19 @@
-/* --- Contenedor principal --- */
+/* --- Estructura general para que el footer quede abajo --- */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 main {
+  flex: 1;
   width: 100%;
   max-width: 1200px;
-  margin: 50px auto;
+  margin: 50px auto 0; /* elimina margen inferior */
   padding: 20px;
   background-color: #fff;
 }
@@ -124,6 +135,11 @@ main {
 
 .checkout-btn:hover {
   background-color: #0f5aa1;
+}
+
+/* --- Footer dentro del layout general --- */
+footer {
+  margin-top: 0 !important;
 }
 
 /* --- Adaptativo --- */
