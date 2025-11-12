@@ -9,64 +9,31 @@
 </head>
 <body>
 
-<!-- Cabecera -->
 <header class="container-fluid">
   <div id="head"></div>
 </header>
 
-<!-- Contenido principal -->
 <main>
   <h2 class="text-center mb-4">Carrito de Compras</h2>
 
-  <!-- Producto 1 -->
-  <div class="cart-item">
-    <img src="img/barcita.png" alt="Camiseta FC Barcelona">
-    <div class="cart-details">
-      <h5>Camiseta FC Barcelona 2014/2015<br>Local Nike Qatar Airways</h5>
-      <p><strong>Talla:</strong> Mediana, <strong>Género:</strong> Unisex, <strong>Materiales:</strong> Poliéster Dri-FIT</p>
-      <div class="quantity-control">
-        <span>Cantidad:&nbsp;</span>
-        <button class="btn-dec" data-index="0">-</button>
-        <input type="text" id="qty-0" value="1">
-        <button class="btn-inc" data-index="0">+</button>
-        <button class="delete-btn btn-del" data-index="0">🗑️</button>
-      </div>
-    </div>
-    <div class="cart-price" id="price-0">$40.00</div>
-  </div>
-
-  <!-- Producto 2 -->
-  <div class="cart-item">
-    <img src="img/gorrita.png" alt="Gorra Deportiva">
-    <div class="cart-details">
-      <h5>Gorra Deportiva Performance Plus</h5>
-      <p><strong>Talla:</strong> Mediana, <strong>Género:</strong> Unisex, <strong>Materiales:</strong> Poliéster técnico, Elastano</p>
-      <div class="quantity-control">
-        <span>Cantidad:&nbsp;</span>
-        <button class="btn-dec" data-index="1">-</button>
-        <input type="text" id="qty-1" value="1">
-        <button class="btn-inc" data-index="1">+</button>
-        <button class="delete-btn btn-del" data-index="1">🗑️</button>
-      </div>
-    </div>
-    <div class="cart-price" id="price-1">$14.99</div>
-  </div>
+  <!-- Contenedor dinámico -->
+  <div id="cart-list"></div>
 
   <!-- Subtotal -->
   <div class="subtotal">
-    Subtotal: <span id="subtotal" class="ms-2">$54.99</span>
+    Subtotal: <span id="subtotal" class="ms-2">$0.00</span>
   </div>
 
-  <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+  <button class="checkout-btn" id="checkoutBtn" disabled>Finalizar Compra</button>
 </main>
 
-<!-- Pie de página -->
-<footer class="container-fluid">
+<footer class="container-fluid" style="margin-top: 50px;">
   <div id="foot"></div>
 </footer>
 
-<!-- Scripts -->
-<script src="js/header-footer.js" defer></script>
-<script src="js/domCarrito.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/domCarrito.js"></script>
+<script src="js/header-footer.js"></script>
+
 </body>
 </html>

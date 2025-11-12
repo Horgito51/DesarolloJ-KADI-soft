@@ -1,4 +1,6 @@
-
+// =========================================
+// LISTA DE PRODUCTOS (sin cambios)
+// =========================================
 const products = [
     {
         id: 1,
@@ -226,26 +228,91 @@ const products = [
 ];
 
 
+// =========================================
+// HELPERS DE CARRITO (AGREGADO)
+// =========================================
+const CART_KEY = "cart";
+
+function loadCart() {
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    const arr = JSON.parse(raw);
+    return Array.isArray(arr) ? arr : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+// Construye un ID único por variante (id + opciones seleccionadas)
+function buildVariantId(producto, selected) {
+  const parts = [String(producto.id)];
+  Object.keys(selected).sort().forEach(k => parts.push(`${k}:${selected[k]}`));
+  return parts.join("|"); // ej: "1|equipacion:Local|talla:M"
+}
+
+// Lee opciones seleccionadas (según tus ids de select: talla, equipacion, etc.)
+function getSelectedOptions(producto) {
+  const out = {};
+  const opts = producto.opciones || {};
+  Object.keys(opts).forEach(k => {
+    const el = document.getElementById(k); // tus selects usan id='talla', 'equipacion', ...
+    out[k] = el ? el.value : "";
+  });
+  return out;
+}
+
+function allOptionsSelected(producto, selected) {
+  if (!producto.opciones) return true;
+  return Object.keys(producto.opciones).every(k => selected[k] && selected[k] !== "");
+}
+
+// Añade al carrito respetando stock y sumando si ya existe misma variante
+function addToCart(producto, qty, selected) {
+  let cart = loadCart();
+  const variantId = buildVariantId(producto, selected);
+
+  const found = cart.find(it => it.variantId === variantId);
+  if (found) {
+    const maxStock = Number(producto.stock ?? 999999);
+    found.qty = Math.min(maxStock, (found.qty || 1) + qty);
+  } else {
+    cart.push({
+      id: producto.id,
+      variantId,
+      name: producto.tittle,
+      price: Number(producto.precio) || 0,
+      img: producto.imagen || "",
+      enlace: producto.enlace || "",
+      selectedOptions: selected,
+      qty: qty
+    });
+  }
+  saveCart(cart);
+}
 
 
-    function generarHTMLDetalleProducto(productos) {
-        let opciones = ""; // guardara el html del selector
-        if (productos.opciones) { // verifico si el producgto tiene opciones
-            Object.keys(productos.opciones).forEach(keys => {// saco las llaves de cada opcion
-                let opcion = productos.opciones[keys]; // guardo el valor de cada llave
-                let inicio = "<option value=''>Seleccione</option>";  // creo el rimer option
-                opcion.valores.forEach(valor => {
-                    inicio += `<option value='${valor}'>${valor}</option>`;
-                });
-                opciones += `<label for='${keys}'><b>${opcion.label}</b></label>` +
-                    `<select class='form-select g3select' name='${keys}' id='${keys}'>` +
-                    inicio +
-                    "</select>" +
-                    "<br>";
-
+// =========================================
+// TU FUNCIÓN DE DETALLE (solo 1 cambio en el botón)
+// =========================================
+function generarHTMLDetalleProducto(productos) {
+    let opciones = ""; // guardara el html del selector
+    if (productos.opciones) { // verifico si el producgto tiene opciones
+        Object.keys(productos.opciones).forEach(keys => {// saco las llaves de cada opcion
+            let opcion = productos.opciones[keys]; // guardo el valor de cada llave
+            let inicio = "<option value=''>Seleccione</option>";  // creo el rimer option
+            opcion.valores.forEach(valor => {
+                inicio += `<option value='${valor}'>${valor}</option>`;
+            });
+            opciones += `<label for='${keys}'><b>${opcion.label}</b></label>` +
+                `<select class='form-select g3select' name='${keys}' id='${keys}'>` +
+                inicio +
+                "</select>" +
+                "<br>";
         });
-
-
     }
     let detallesHTML = "";
     if (productos.detalles) {
@@ -267,26 +334,26 @@ const products = [
         "<br><br>" +
         opciones +
         detallesHTML +
-        `<button  id='botonCarrito' class='btn btn-primary' type='button'>Añadir Carrito</button>` +
+        // --------- CAMBIO: agrego data-product-id ----------
+        `<button id='botonCarrito' data-product-id='${productos.id}' class='btn btn-primary' type='button'>Añadir Carrito</button>` +
+        // ----------------------------------------------------
         "</div>" +
         "<div class='col-md-2'>" +
         "</div>" +
         "</div>" +
-        "<h1 class='otrosProductos'>Otros productos</h1>"
-
-        ;
-
+        "<h1 class='otrosProductos'>Otros productos</h1>";
 }
 
+// =========================================
+// RECOMENDADOS (sin cambios de estructura)
+// =========================================
 const recomendados = document.getElementById("productosRecomendados");
-
 
 if (recomendados) {
     recomendados.innerHTML = "";
-
-        for (const i of products) {
-            const recomendados = document.getElementById("productosRecomendados");
-            recomendados.innerHTML += `
+    for (const i of products) {
+        const recomendados = document.getElementById("productosRecomendados");
+        recomendados.innerHTML += `
         <div>
             <div class="card  shadow-sm productosFila " onclick="window.open('${i.enlace}')">
             <img src=${i.imagen}  class="card-img-top imgrecomendaciones" alt=${i.descripcion}>
@@ -301,9 +368,9 @@ if (recomendados) {
     }
 }
 
-
-
-
+// =========================================
+// CREAR PRODUCTO EN CADA PÁGINA (sin cambios)
+// =========================================
 function crearProducto() {
     let camisetaBarcelona = document.getElementById("idCamisetaBarcelonaFC");
     if (camisetaBarcelona) {
@@ -340,11 +407,6 @@ function crearProducto() {
     }
 }
 
-
-
-
-
-
 /*
 function añadircarrito() {
     let carrito = document.getElementById("alerta");
@@ -361,46 +423,62 @@ function añadircarrito() {
     }, 3000)
 }*/
 
+// =========================================
+// CLICK DEL BOTÓN (reemplazado para añadir al carrito)
+// =========================================
+$(document).ready(function () {
+    $("#botonCarrito").off("click").on("click", function () {
+        // 1) Identificar producto
+        const id = Number(this.dataset.productId);
+        const producto = products.find(p => Number(p.id) === id);
+        if (!producto) return;
 
+        // 2) Cantidad
+        const qtyInput = document.getElementById("cantidad");
+        let qty = parseInt(qtyInput ? qtyInput.value : "1", 10);
+        if (!Number.isFinite(qty) || qty < 1) qty = 1;
 
-    $(document).ready(function () {
-        $("#botonCarrito").click(function () {
-              Swal.fire({
-              title: "Añadido al carrito",
-              icon: "success",
-              draggable: true
+        // Respetar stock
+        const max = Number(producto.stock ?? 1);
+        if (qty > max) {
+            qty = max;
+            if (qtyInput) qtyInput.value = String(qty);
+        }
+
+        // 3) Opciones seleccionadas
+        const selected = getSelectedOptions(producto);
+        if (!allOptionsSelected(producto, selected)) {
+            if (window.Swal?.fire) {
+                Swal.fire({ title: "Selecciona las opciones requeridas", icon: "warning" });
+            } else {
+                alert("Selecciona las opciones requeridas.");
+            }
+            return;
+        }
+
+        // 4) Añadir al carrito (localStorage)
+        addToCart(producto, qty, selected);
+
+        // 5) Feedback (tu Swal)
+        if (window.Swal?.fire) {
+            Swal.fire({
+                title: "Añadido al carrito",
+                text: producto.tittle,
+                icon: "success",
+                draggable: true,
+                timer: 1300,
+                showConfirmButton: false
             });
-            /*
-            $("#alerta").css("display","block");
-
-        $("#alerta").html('<div class="alert alert-success" role="alert">' +
-            '<h4 class="alert-heading">Producto añadido</h4>' +
-            '<p>El producto se ha añadido correctamente a tu carrito.</p>' +
-            '</div>')
-
-            setTimeout(function(){
-                $("#alerta").css("display","none");
-            },3000)
-              */
-
-
-    })
-})
+        } else {
+            alert("Producto añadido al carrito");
+        }
+    });
+});
 
 crearProducto();
 
 
-
-
-
-
-
-
-
-
-
 //----------------------------------------------------------------------------------------
-
 /*<div id="alerta" class="alert alert-success" role="alert" style="display: none;">
 <h4 class="alert-heading">Producto añadido</h4>
 <p>El producto se ha añadido correctamente a tu carrito.</p>
@@ -415,8 +493,3 @@ crearProducto();
         carrito.style.display = "none";
         }, 3000)
     }*/
-
-
-
-
-
