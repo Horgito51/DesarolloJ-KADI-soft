@@ -228,7 +228,9 @@ const products = [
 ];
 
 
-
+// =========================================
+// HELPERS DE CARRITO (AGREGADO)
+// =========================================
 const CART_KEY = "cart";
 
 function loadCart() {
@@ -251,7 +253,7 @@ function buildVariantId(producto, selected) {
   Object.keys(selected).sort().forEach(k => parts.push(`${k}:${selected[k]}`));
   return parts.join("|"); // ej: "1|equipacion:Local|talla:M"
 }
- 
+
 // Lee opciones seleccionadas (según tus ids de select: talla, equipacion, etc.)
 function getSelectedOptions(producto) {
   const out = {};
@@ -293,6 +295,9 @@ function addToCart(producto, qty, selected) {
 }
 
 
+// =========================================
+// TU FUNCIÓN DE DETALLE (solo 1 cambio en el botón)
+// =========================================
 function generarHTMLDetalleProducto(productos) {
     let opciones = ""; // guardara el html del selector
     if (productos.opciones) { // verifico si el producgto tiene opciones
