@@ -245,19 +245,19 @@ function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
-// Construye un ID único por variante (id + opciones seleccionadas)
+// Construye un ID único por variante
 function buildVariantId(producto, selected) {
   const parts = [String(producto.id)];
   Object.keys(selected).sort().forEach(k => parts.push(`${k}:${selected[k]}`));
-  return parts.join("|"); // ej: "1|equipacion:Local|talla:M"
+  return parts.join("|");
 }
  
-// Lee opciones seleccionadas (según tus ids de select: talla, equipacion, etc.)
+// Lee opciones seleccionadas
 function getSelectedOptions(producto) {
   const out = {};
   const opts = producto.opciones || {};
   Object.keys(opts).forEach(k => {
-    const el = document.getElementById(k); // tus selects usan id='talla', 'equipacion', ...
+    const el = document.getElementById(k);
     out[k] = el ? el.value : "";
   });
   return out;
