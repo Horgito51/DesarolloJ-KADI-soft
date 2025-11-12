@@ -234,64 +234,64 @@ const products = [
 const CART_KEY = "cart";
 
 function loadCart() {
-  try {
-    const raw = localStorage.getItem(CART_KEY);
-    const arr = JSON.parse(raw);
-    return Array.isArray(arr) ? arr : [];
-  } catch {
-    return [];
-  }
+    try {
+        const raw = localStorage.getItem(CART_KEY);
+        const arr = JSON.parse(raw);
+        return Array.isArray(arr) ? arr : [];
+    } catch {
+        return [];
+    }
 }
 
 function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
 // Construye un ID único por variante
 function buildVariantId(producto, selected) {
-  const parts = [String(producto.id)];
-  Object.keys(selected).sort().forEach(k => parts.push(`${k}:${selected[k]}`));
-  return parts.join("|");
+    const parts = [String(producto.id)];
+    Object.keys(selected).sort().forEach(k => parts.push(`${k}:${selected[k]}`));
+    return parts.join("|");
 }
- 
+
 // Lee opciones seleccionadas (según tus ids de select: talla, equipacion, etc.)
 function getSelectedOptions(producto) {
-  const out = {};
-  const opts = producto.opciones || {};
-  Object.keys(opts).forEach(k => {
-    const el = document.getElementById(k);
-    out[k] = el ? el.value : "";
-  });
-  return out;
+    const out = {};
+    const opts = producto.opciones || {};
+    Object.keys(opts).forEach(k => {
+        const el = document.getElementById(k);
+        out[k] = el ? el.value : "";
+    });
+    return out;
 }
 
 function allOptionsSelected(producto, selected) {
-  if (!producto.opciones) return true;
-  return Object.keys(producto.opciones).every(k => selected[k] && selected[k] !== "");
+    if (!producto.opciones) return true;
+    return Object.keys(producto.opciones).every(k => selected[k] && selected[k] !== "");
 }
 
 // Añade al carrito respetando stock y sumando si ya existe misma variante
 function addToCart(producto, qty, selected) {
-  let cart = loadCart();
-  const variantId = buildVariantId(producto, selected);
+    let cart = loadCart();
+    const variantId = buildVariantId(producto, selected);
 
-  const found = cart.find(it => it.variantId === variantId);
-  if (found) {
-    const maxStock = Number(producto.stock ?? 999999);
-    found.qty = Math.min(maxStock, (found.qty || 1) + qty);
-  } else {
-    cart.push({
-      id: producto.id,
-      variantId,
-      name: producto.tittle,
-      price: Number(producto.precio) || 0,
-      img: producto.imagen || "",
-      enlace: producto.enlace || "",
-      selectedOptions: selected,
-      qty: qty
-    });
-  }
-  saveCart(cart);
+    const found = cart.find(it => it.variantId === variantId);
+    if (found) {
+        const maxStock = Number(producto.stock ?? 999999);
+        found.qty = Math.min(maxStock, (found.qty || 1) + qty);
+    } else {
+        cart.push({
+            id: producto.id,
+            variantId,
+            name: producto.tittle,
+            price: Number(producto.precio) || 0,
+            img: producto.imagen || "",
+            enlace: producto.enlace || "",
+            selectedOptions: selected,
+            qty: qty
+        });
+    }
+    saveCart(cart);
 }
 
 
@@ -325,7 +325,7 @@ function generarHTMLDetalleProducto(productos) {
         "<div class='col-sm-12 col-md-6 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center'>" +
         `<img src='${productos.imagen}' width='420px' height='420px' alt='${productos.tittle}'>` +
         "</div>" +
-        "<div class=' col-sm-12 col-md-4 col-lg-4'>" +
+        "<div class=' col-sm-12 col-md-3 col-lg-3'>" +
         `<h1>${productos.tittle}</h1>` +
         `<p><b>Precio:</b> <big>$${productos.precio}</big></p>` +
         `<p><b>Marca:</b> ${productos.marca}</p>` +
@@ -336,7 +336,8 @@ function generarHTMLDetalleProducto(productos) {
         detallesHTML +
         `<button id='botonCarrito' data-product-id='${productos.id}' class='btn btn-primary' type='button'>Añadir Carrito</button>` +
         "</div>" +
-        "<div class='col-sm-12 col-md-2 col-lg-2'>" +
+        "<div class='col-sm-12 col-md-3 col-lg-3' style='border: 1px solid #1a1a2e;'>" +
+        "<iframe src='/carrito.html' width='100%' height='100%' style='border:none;'></iframe>" +
         "</div>" +
         "</div>" +
         "<h1 class='otrosProductos'>Otros productos</h1>";
@@ -464,6 +465,12 @@ $(document).ready(function () {
         } else {
             alert("Producto añadido al carrito");
         }
+    
+        const iframe = document.querySelector('iframe[src="/carrito.html"]');
+    if (iframe) {
+        iframe.src = iframe.src; 
+    }
+    
     });
 });
 

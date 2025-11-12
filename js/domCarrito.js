@@ -63,27 +63,38 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const itemHTML = `
-        <div class="cart-item border rounded p-3 mb-3" data-id="${p.variantId}">
-          <div class="d-flex align-items-center gap-3">
-            <img src="${p.img || "img/placeholder.png"}" alt="${p.name}" style="width:120px;height:auto;border-radius:8px;">
-            <div class="flex-grow-1">
-              <h5>${p.name}</h5>
-              ${optsHTML}
-              <p class="mb-1"><b>Precio unitario:</b> ${fmt(p.price)}</p>
-              <div class="quantity-control d-flex align-items-center gap-2">
-                <span><b>Cantidad:</b></span>
-                <button class="btn btn-sm btn-outline-secondary" data-action="dec">-</button>
-                <input type="text" class="qty-input form-control form-control-sm text-center" style="width:60px;" value="${p.qty}">
-                <button class="btn btn-sm btn-outline-secondary" data-action="inc">+</button>
-                <button class="btn btn-sm btn-danger ms-2" data-action="del">🗑️</button>
-              </div>
-            </div>
-            <div class="text-end ms-auto">
-              <p class="fw-bold">${fmt(totalItem)}</p>
-            </div>
+  <div class="cart-item border rounded p-2 p-md-3 mb-3" data-id="${p.variantId}">
+    <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-3">
+      <img src="${p.img || "img/placeholder.png"}" 
+           alt="${p.name}" 
+           class="align-self-center align-self-md-start"
+           style="width:100px;height:auto;border-radius:8px;">
+      
+      <div class="flex-grow-1 w-100">
+        <h5 class="mb-2">${p.name}</h5>
+        ${optsHTML}
+        <p class="mb-2"><b>Precio unitario:</b> ${fmt(p.price)}</p>
+        
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2">
+          <div class="quantity-control d-flex align-items-center gap-2">
+            <span class="small"><b>Cantidad:</b></span>
+            <button class="btn btn-sm btn-outline-secondary" data-action="dec">-</button>
+            <input type="text" 
+                   class="qty-input form-control form-control-sm text-center" 
+                   style="width:50px;" 
+                   value="${p.qty}">
+            <button class="btn btn-sm btn-outline-secondary" data-action="inc">+</button>
+          </div>
+          
+          <div class="d-flex align-items-center gap-2">
+            <p class="fw-bold mb-0 fs-5">${fmt(totalItem)}</p>
+            <button class="btn btn-sm btn-danger" data-action="del">🗑️</button>
           </div>
         </div>
-      `;
+      </div>
+    </div>
+  </div>
+`;
       cartList.insertAdjacentHTML("beforeend", itemHTML);
     });
 
