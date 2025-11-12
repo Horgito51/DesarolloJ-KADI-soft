@@ -18,7 +18,7 @@ $(document).ready(function() {
       imagen:'img/balon.png',
       titulo:'Balón de Fútbol Trionda',
       descripcion:'Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!',
-      enlace:'/balon.html'
+      enlace:'balon.html'
     },
     {
       imagen: 'img/cuerdasaltar.png',
