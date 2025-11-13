@@ -381,7 +381,6 @@ textarea {
 }
 
 /* Anahí */
-
 .card-title {
   font-size: 20px;
   font-weight: bold;
@@ -456,8 +455,6 @@ svg {
   object-fit: cover; /* llena el div sin deformar */
   display: block;
 }
-
-
 
 /*Otros productos dentro de los detalles*/
 .productos-slider {

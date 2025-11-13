@@ -1,24 +1,23 @@
-
-$(document).ready(function() {
+$(document).ready(function () {
   const productos = $("#products");
   const paginacion = $("#paginacion");
   productos.addClass("flex_container");
-  const proxpagina=12;
-  let paginaActual=1;
+  const proxpagina = 10;
+  let paginaActual = 1;
 
 
-  const listaProductos=[
+  const listaProductos = [
     {
-      imagen:'img/P1.png',
-      titulo:'Camiseta Barcelona',
-      descripcion:'Siente la pasión del fútbol con la camiseta oficial del FC Barcelona',
-      enlace:'camisetaBarca.html'
+      imagen: 'img/P1.png',
+      titulo: 'Camiseta Barcelona',
+      descripcion: 'Siente la pasión del fútbol con la camiseta oficial del FC Barcelona',
+      enlace: 'camisetaBarca.html'
     },
     {
-      imagen:'img/balon.png',
-      titulo:'Balón de Fútbol Trionda',
-      descripcion:'Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!',
-      enlace:'balon.html'
+      imagen: 'img/balon.png',
+      titulo: 'Balón de Fútbol Trionda',
+      descripcion: 'Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!',
+      enlace: 'balon.html'
     },
     {
       imagen: 'img/cuerdasaltar.png',
@@ -69,16 +68,16 @@ $(document).ready(function() {
       enlace: 'termo.html'
     },
     {
-      imagen:'img/P1.png',
-      titulo:'Camiseta Barcelona',
-      descripcion:'Siente la pasión del fútbol con la camiseta oficial del FC Barcelona',
-      enlace:'camisetaBarca.html'
+      imagen: 'img/P1.png',
+      titulo: 'Camiseta Barcelona',
+      descripcion: 'Siente la pasión del fútbol con la camiseta oficial del FC Barcelona',
+      enlace: 'camisetaBarca.html'
     },
     {
-      imagen:'img/balon.png',
-      titulo:'Balón de Fútbol Trionda',
-      descripcion:'Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!',
-      enlace:'balon.html'
+      imagen: 'img/balon.png',
+      titulo: 'Balón de Fútbol Trionda',
+      descripcion: 'Diseñado para rendimiento y durabilidad, perfecta para los verdaderos amantes del fútbol. ¡Llévalo hoy!',
+      enlace: 'balon.html'
     },
     {
       imagen: 'img/cuerdasaltar.png',
@@ -101,43 +100,53 @@ $(document).ready(function() {
 
   ];
 
-  const totalPaginas=Math.ceil(listaProductos.length/proxpagina);
+  const totalPaginas = Math.ceil(listaProductos.length / proxpagina);
 
   function mostrarProductosPagina(pagina) {
     productos.empty();
-    let inicio=(pagina-1)*proxpagina;
-    let fin=inicio+proxpagina;
+    let inicio = (pagina - 1) * proxpagina;
+    let fin = inicio + proxpagina;
 
     //Caso de que el fin se pase del total de productos
-    if (fin>listaProductos.length) {
-      fin=listaProductos.length;
+    if (fin > listaProductos.length) {
+      fin = listaProductos.length;
     }
 
-      for(let i=inicio;i<fin;i++) {
-      const producto = $('<div>').addClass('card');
+    for (let i = inicio; i < fin; i++) {
+      const producto = $("<div>").addClass('card ');
+      //Añado el atributo data-url para cada producto y poder irme al detalle
+      producto.attr('data-url', listaProductos[i].enlace);
       producto.html(`
         <img src="${listaProductos[i].imagen}" class="card-img-top imgproduct" alt="${listaProductos[i].titulo}">
           <div class="card-body">
             <h5 class="card-title">${listaProductos[i].titulo}</h5>
             <p class="card-text">${listaProductos[i].descripcion}</p>
-            <a href="#" class="btn btn-custom" onclick="window.open('${listaProductos[i].enlace}')">Más información</a>
+            <a href="#" class="btn btn-custom" onclick="window.open('${listaProductos[i].enlace}')">Comprar ahora</a>
           </div>
-      `);
+          `);
+      producto.click(function () {
+        //obtener la url del atributo data-url
+        let url = $(this).data('url');
+        //redirigir a la página de detalle
+        window.location.href = url;
+      });
       productos.append(producto);
     }
   }
 
+
+
   function actualizarPaginacion() {
     paginacion.empty();
-    let paginacionHtml ='<nav><ul class="pagination justify-content-center">';
-    paginacionHtml +=`
+    let paginacionHtml = '<nav><ul class="pagination justify-content-center">';
+    paginacionHtml += `
       <li class="page-item ${paginaActual === 1 ? 'disabled' : ''}">
         <a class="page-link" href="#" data-pagina="${paginaActual - 1}">
           <span>&laquo;</span>
         </a>
       </li>
     `;
-    for(let i = 1; i <= totalPaginas; i++) {
+    for (let i = 1; i <= totalPaginas; i++) {
       paginacionHtml += `
         <li class="page-item ${i === paginaActual ? 'active' : ''}">
           <a class="page-link" href="#" data-pagina="${i}">${i}</a>
@@ -159,11 +168,11 @@ $(document).ready(function() {
 
   }
 
-  paginacion.on('click', 'a.page-link', function(e) {
+  paginacion.on('click', 'a.page-link', function (e) {
     e.preventDefault();
     const $this = $(this);
     const $li = $this.parent();
-    if($li.hasClass('disabled')) return;
+    if ($li.hasClass('disabled')) return;
 
     const nuevaPagina = parseInt($this.data('pagina'));
     paginaActual = nuevaPagina;
@@ -178,4 +187,3 @@ $(document).ready(function() {
 
 
 });
-
