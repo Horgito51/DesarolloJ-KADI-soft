@@ -92,6 +92,7 @@ h1, h2, h3 {
   background-color: #031832;
   padding: 0px;
   color: white;
+  width:100%;
   /*margin: 3px 3px 3px 3px*/;
   overflow: hidden;
 }
@@ -109,7 +110,7 @@ h1, h2, h3 {
 .logo{
   float: left;
   max-width: 100%;
-  height: auto;
+  height: a;
 }
 .textoLogo{
   font-size: 30px;
@@ -166,8 +167,10 @@ section{
 footer {
   background-color: #031832;
   color: white;
-  padding: 40px 20px;
+  padding: 17px 20px;
   text-align: center;
+  height:auto;
+
 }
 
 .footer-content h1 {
@@ -296,7 +299,7 @@ section div button {
 
 
 .dashContainer{
-  height:1150px;
+  height:1200px;
   color:white;
 }
 
@@ -382,7 +385,6 @@ textarea {
 }
 
 /* Anahí */
-
 .card-title {
   font-size: 20px;
   font-weight: bold;
@@ -457,8 +459,6 @@ svg {
   object-fit: cover; /* llena el div sin deformar */
   display: block;
 }
-
-
 
 /*Otros productos dentro de los detalles*/
 .productos-slider {
