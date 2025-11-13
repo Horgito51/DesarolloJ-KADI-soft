@@ -354,9 +354,29 @@ h2 {
 .presentacion{
   display:grid;
   grid-template-columns: 50% 25% 25%;
-  grid-auto-rows: minmax(100px, auto);
-  height:900px;
+  grid-auto-rows: auto;
+  height:auto;
 
+}
+/* Tablet */
+@media (max-width: 992px) {
+    .presentacion {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+    .presentacion {
+        grid-template-columns: 1fr;
+    }
+
+    /* Evita deformar imágenes */
+    .presentacion img {
+        height: auto !important;
+        object-fit: cover;
+        width: 100%;
+    }
 }
 .nueva{
   background-color: #0f5132;
