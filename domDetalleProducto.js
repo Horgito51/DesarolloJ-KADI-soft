@@ -9,7 +9,7 @@ const products = [
         precio: 40,
         stock: 7,
         enStock: true,
-        enlace: '/camisetaBarca.html',
+        enlace: 'camisetaBarca.html',
         imagen: "img/P1.png",
         marca: "Nike",
         opciones: {
@@ -34,7 +34,7 @@ const products = [
         precio: 34.99,
         stock: 7,
         enStock: true,
-        enlace: '/balon.html',
+        enlace: 'balon.html',
         imagen: "img/balon.png",
         marca: "Adidas style",
         opciones: {
@@ -55,7 +55,7 @@ const products = [
         precio: 16.99,
         stock: 7,
         enStock: true,
-        enlace: '/cuerdassaltar.html'
+        enlace: 'cuerdassaltar.html'
         ,
         imagen: "img/cuerdasaltar.png",
         marca: "FitGear",
@@ -79,7 +79,7 @@ const products = [
         enStock: true,
         imagen: "img/gorrita.png",
         marca: "ActiveWear Pro",
-        enlace: '/gorra.html'
+        enlace: 'gorra.html'
         ,
         opciones: {
             talla: {
@@ -100,7 +100,7 @@ const products = [
         precio: 32.99,
         stock: 7,
         enStock: true,
-        enlace: '/legginsdeportivos.html',
+        enlace: 'legginsdeportivos.html',
         imagen: "img/legginsdeportivos.png",
         marca: "FitFlow Activewear",
         opciones: {
@@ -126,7 +126,7 @@ const products = [
         precio: 9.99,
         stock: 7,
         enStock: true,
-        enlace: '/ligaselastivas.html',
+        enlace: 'ligaselastivas.html',
 
         imagen: "img/ligaselasticas.png",
         marca: "FlexBand Pro",
@@ -148,7 +148,7 @@ const products = [
         precio: 45,
         stock: 7,
         enStock: true,
-        enlace: '/mancuernas.html',
+        enlace: 'mancuernas.html',
 
         imagen: "img/mancuernas.png",
         marca: "IronGrip Pro",
@@ -171,7 +171,7 @@ const products = [
         precio: 9.99,
         stock: 7,
         enStock: true,
-        enlace: '/mediasdeportivas.html',
+        enlace: 'mediasdeportivas.html',
 
         imagen: "img/mediasDepor.png",
         marca: "ProSport",
@@ -198,7 +198,7 @@ const products = [
         precio: 27,
         stock: 7,
         enStock: true,
-        enlace: '/Mochila.html',
+        enlace: 'Mochila.html',
 
         imagen: "img/mochi.png",
         marca: "Adventure Gear",
@@ -215,7 +215,7 @@ const products = [
         precio: 15,
         stock: 7,
         enStock: true,
-        enlace: '/termo.html',
+        enlace: 'termo.html',
 
         imagen: "img/termo.png",
         marca: "ThermoFlask",
