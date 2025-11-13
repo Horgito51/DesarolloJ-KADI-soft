@@ -4,7 +4,7 @@
 const products = [
     {
         id: 1,
-        tittle: "Camiseta FC Barcelona 2014/2015",
+        titulo: "Camiseta FC Barcelona 2014/2015",
         descripcion: "Camiseta local Nike Qatar Airways, poliéster Dri-FIT",
         precio: 40,
         stock: 7,
@@ -28,7 +28,7 @@ const products = [
     },
     {
         id: 2,
-        tittle: "Balón de Fútbol Trionda Pro",
+        titulo: "Balón de Fútbol Trionda Pro",
         descripcion: "Réplica Mundial, cuero sintético PU de alta calidad con cámara de látex butílico",
         precio: 34.99,
         stock: 7,
@@ -48,7 +48,7 @@ const products = [
     },
     {
         id: 3,
-        tittle: "Cuerda de Saltar",
+        titulo: "Cuerda de Saltar",
         descripcion: "Mejora tu agilidad y resistencia con esta cuerda de alta velocidad",
         precio: 16.99,
         stock: 7,
@@ -68,7 +68,7 @@ const products = [
     },
     {
         id: 4,
-        tittle: "Gorra Deportiva Performance Plus",
+        titulo: "Gorra Deportiva Performance Plus",
         descripcion: "Gorra tipo béisbol con visera curva, 90% poliéster técnico, 10% elastano, protección UV",
         precio: 14.99,
         stock: 7,
@@ -89,7 +89,7 @@ const products = [
     },
     {
         id: 5,
-        tittle: "Leggins Deportivos High Waist",
+        titulo: "Leggins Deportivos High Waist",
         descripcion: "Compresión y control, 75% Nylon de alta resistencia, 25% Spandex, gramaje 240 GSM",
         precio: 32.99,
         stock: 7,
@@ -114,7 +114,7 @@ const products = [
     },
     {
         id: 6,
-        tittle: "Liga Elástica de Resistencia",
+        titulo: "Liga Elástica de Resistencia",
         descripcion: "100% TPE termoplástico elastómero, libre de látex, antideslizante no tóxico",
         precio: 9.99,
         stock: 7,
@@ -134,7 +134,7 @@ const products = [
     },
     {
         id: 7,
-        tittle: "Mancuernas Hexagonales con Neopreno",
+        titulo: "Mancuernas Hexagonales con Neopreno",
         descripcion: "Núcleo de hierro fundido sólido con recubrimiento de neopreno, mango de acero cromado",
         precio: 45,
         stock: 7,
@@ -155,7 +155,7 @@ const products = [
     },
     {
         id: 8,
-        tittle: "Medias Deportivas Antideslizantes Pro",
+        titulo: "Medias Deportivas Antideslizantes Pro",
         descripcion: "85% algodón, 12% poliéster, 3% elastano, para running, fútbol, basketball, gym",
         precio: 9.99,
         stock: 7,
@@ -180,7 +180,7 @@ const products = [
     },
     {
         id: 9,
-        tittle: "Mochila Adventure Time",
+        titulo: "Mochila Adventure Time",
         descripcion: "Diseño collage de personajes, poliéster/tel resistente, bolsillo frontal con cierre",
         precio: 27,
         stock: 7,
@@ -195,7 +195,7 @@ const products = [
     },
     {
         id: 10,
-        tittle: "Botella Térmica de Acero Inoxidable 500ml",
+        titulo: "Botella Térmica de Acero Inoxidable 500ml",
         descripcion: "Mantiene frío/calor 24hrs, acero inoxidable de alta calidad, origen Ecuador/Quito",
         precio: 15,
         stock: 7,
@@ -262,7 +262,7 @@ function addToCart(producto, qty, selected) {
         cart.push({
             id: producto.id,
             variantId,
-            name: producto.tittle,
+            name: producto.titulo,
             price: Number(producto.precio) || 0,
             img: producto.imagen || "",
             selectedOptions: selected,
@@ -277,7 +277,7 @@ function addToCart(producto, qty, selected) {
 // =========================================
 function generarHTMLDetalleProducto(producto) {
     // Título dinámico de la página
-    document.title = producto.tittle + " - G3 Sports";
+    document.title = producto.titulo + " - G3 Sports";
 
     let opciones = "";
     if (producto.opciones) {
@@ -305,10 +305,10 @@ function generarHTMLDetalleProducto(producto) {
     return "<div id='alerta' style='display:none;'></div>" + 
            "<div class='row'>" +
         "<div class='col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center'>" +
-        `<img src='${producto.imagen}' width='420px' height='420px' alt='${producto.tittle}'>` +
+        `<img src='${producto.imagen}' width='420px' height='420px' alt='${producto.titulo}'>` +
         "</div>" +
         "<div class='col-sm-12 col-md-3 col-lg-3'>" +
-        `<h1>${producto.tittle}</h1>` +
+        `<h1>${producto.titulo}</h1>` +
         `<p><b>Precio:</b> <big>$${producto.precio}</big></p>` +
         `<p><b>Marca:</b> ${producto.marca}</p>` +
         "<label for='cantidad'><b>Cantidad:</b></label>" +
@@ -337,7 +337,7 @@ if (recomendados) {
             <div class="card shadow-sm productosFila" onclick="window.location.href='detalleProducto.html?id=${i.id}'">
             <img src="${i.imagen}" class="card-img-top imgrecomendaciones" alt="${i.descripcion}">
             <div class="card-body">
-                <h5 class="card-title">${i.tittle}</h5>
+                <h5 class="card-title">${i.titulo}</h5>
                 <p class="card-text">${i.descripcion}</p>
                 <p class="card-title">$${i.precio}</p>
             </div>
@@ -412,7 +412,7 @@ function configurarBotonCarrito() {
             if (window.Swal?.fire) {
                 Swal.fire({
                     title: "Añadido al carrito",
-                    text: producto.tittle,
+                    text: producto.titulo,
                     icon: "success",
                     draggable: true,
                     timer: 1300,
