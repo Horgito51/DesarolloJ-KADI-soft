@@ -1,6 +1,4 @@
-// =========================================
-// LISTA DE PRODUCTOS
-// =========================================
+
 const products = [
     {
         id: 1,
@@ -210,9 +208,7 @@ const products = [
     }
 ];
 
-// =========================================
-// HELPERS DE CARRITO
-// =========================================
+
 const CART_KEY = "cart";
 
 function loadCart() {
@@ -272,11 +268,7 @@ function addToCart(producto, qty, selected) {
     saveCart(cart);
 }
 
-// =========================================
-// GENERAR HTML DEL PRODUCTO
-// =========================================
 function generarHTMLDetalleProducto(producto) {
-    // Título dinámico de la página
     document.title = producto.titulo + " - G3 Sports";
 
     let opciones = "";
@@ -325,9 +317,7 @@ function generarHTMLDetalleProducto(producto) {
         "<h1 class='otrosProductos'>Otros productos</h1>";
 }
 
-// =========================================
-// PRODUCTOS RECOMENDADOS
-// =========================================
+
 const recomendados = document.getElementById("productosRecomendados");
 if (recomendados) {
     recomendados.innerHTML = "";
@@ -347,11 +337,9 @@ if (recomendados) {
     }
 }
 
-// =========================================
-// CARGAR PRODUCTO DINÁMICAMENTE DESDE URL
-// =========================================
+
 function cargarProductoDesdURL() {
-    // Obtener parámetro 'id' de la URL
+    
     const params = new URLSearchParams(window.location.search);
     const productId = parseInt(params.get('id'));
 
@@ -370,16 +358,14 @@ function cargarProductoDesdURL() {
         return;
     }
 
-    // Generar HTML del producto
+    
     document.getElementById("detalleProducto").innerHTML = generarHTMLDetalleProducto(producto);
 
-    // Configurar el botón de añadir al carrito
+    
     configurarBotonCarrito();
 }
 
-// =========================================
-// CONFIGURAR BOTÓN AÑADIR AL CARRITO
-// =========================================
+
 function configurarBotonCarrito() {
     $(document).ready(function () {
         $("#botonCarrito").off("click").on("click", function () {
@@ -430,7 +416,4 @@ function configurarBotonCarrito() {
     });
 }
 
-// =========================================
-// INICIALIZAR AL CARGAR LA PÁGINA
-// =========================================
 cargarProductoDesdURL();
