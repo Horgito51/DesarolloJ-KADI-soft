@@ -226,3 +226,33 @@ const products = [
 
 
 
+
+class Products{
+
+    constructor(){
+        this.products = products;
+        this.cart = [];
+    }
+
+    getProduct(){
+        return this.products;
+    }
+    getProductById(id){
+
+    }
+
+    addProduct(id){
+        const p= this.getProductById(id);
+        if(!p){
+            return error;
+        }
+        if(p.enStock == 0){
+            return error;
+        }
+        p.enStock--;
+        this.cart.push(p);
+
+    }
+
+
+}
