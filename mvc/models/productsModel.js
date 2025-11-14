@@ -225,4 +225,36 @@ const products = [
 ];
 
 
+class Products{
+  products(){
+    this.products=products;
+    this.cart=[];
+  }
+
+  getProducts(){
+    return this.products;
+  }
+
+  getProductById(id){
+    return this.cart[id];
+  }
+
+  getProductosDestacados(){
+
+  }
+
+  addProductCart(id){
+    const p=this.getProductById(id)
+    if (!p){
+      return error;
+    }
+    if(p.stock<=0){
+      return error;
+    }
+    p.stock-=1;
+    this.cart.push(p);
+  }
+
+
+}
 
