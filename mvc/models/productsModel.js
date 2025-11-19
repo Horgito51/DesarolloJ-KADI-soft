@@ -236,7 +236,8 @@ class Products{
   }
 
   getProductById(id){
-    return this.cart[id];
+    // for each 
+    return products[id];
   }
 
   getProductosDestacados(){

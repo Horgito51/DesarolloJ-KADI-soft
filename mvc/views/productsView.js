@@ -7,7 +7,9 @@ class ProductView{
     }
 
     renderProducts(products){
-
+    products.forEach(p => {
+        
+    });
         
     }
 }
