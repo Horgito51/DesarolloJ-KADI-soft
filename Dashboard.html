@@ -6,7 +6,7 @@
   <title>Dashboard</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/bootstrap.bundle.js.map"></script>
+  <script src="js/bootstrap.bundle.js"></script>
 
 </head>
 <body>
@@ -115,14 +115,16 @@
  <div id="foot"></div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="js/header-footer.js"></script>
-<script src="MVC/controllers/productsController.js"></script>
-<script src="MVC/models/productsModel.js"></script>
-<script src="MVC/views/productsView.js"></script>
-<script>
-  const Controller=new controller
-  Controller.init
+<script type="module">
+    import headerController from "./mvc/controllers/headerController.js";
+
+    $(document).ready(function () {
+        const header = new headerController();
+        header.init();
+    });
 </script>
+
+
 </body>
 
 </html>
