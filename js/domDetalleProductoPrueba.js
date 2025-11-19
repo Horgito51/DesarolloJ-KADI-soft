@@ -268,6 +268,8 @@ function addToCart(producto, qty, selected) {
     saveCart(cart);
 }
 
+
+
 function generarHTMLDetalleProducto(producto) {
     document.title = producto.titulo + " - G3 Sports";
 

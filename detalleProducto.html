@@ -26,10 +26,37 @@
     <div id="foot"></div>
   </footer>
 
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!--
   <script src="js/header-footer.js"></script>
   <script src="js/domDetalleProductoPrueba.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+
+
+<script type="module">
+  import { ProductDetalleController } from "./mvc/controllers/detalleControlador.js";
+
+  const controller = new ProductDetalleController();
+  controller.init();
+</script>
+
+<script type="module">
+  import headerController from "./mvc/controllers/headerController.js";
+
+  $(document).ready(function () {
+      const header = new headerController();
+      header.init();
+  });
+</script>
+
 </body>
 
 </html>
