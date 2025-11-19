@@ -1,4 +1,8 @@
-<div class="footer container-fluid d-flex justify-content-center" style="margin-top:15px">
+export default class footerView{
+  constructor(){
+    this.headerComponent=$("#foot");
+    this.html=`
+ <div class="footer container-fluid d-flex justify-content-center" style="margin-top:15px">
   <div class="row"  >
   <div class=" col-md-3 col-sm-12 col-12 d-flex flex-column align-items-center">
     <h2>Recursos útiles</h2>
@@ -31,3 +35,11 @@
   </div>
   </div>
 </div>
+
+  `
+  }
+  renderfooter(html){
+    this.headerComponent.html(this.html);
+  }
+
+}

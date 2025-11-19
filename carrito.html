@@ -34,7 +34,24 @@
 -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/domCarrito.js"></script>
-<script src="js/header-footer.js"></script>
+
+<script type="module">
+    import headerController from "./mvc/controllers/headerController.js";
+
+    $(document).ready(function () {
+        const header = new headerController();
+        header.init();
+    });
+</script>
+
+<script type="module">
+    import footerController from "./mvc/controllers/footerController.js";
+
+    $(document).ready(function () {
+        const footer = new footerController();
+        footer.init();
+    });
+</script>
 
 </body>
 </html>

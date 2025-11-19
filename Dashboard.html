@@ -114,6 +114,8 @@
 <footer class="container-fluid" >
  <div id="foot"></div>
 </footer>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="module">
     import headerController from "./mvc/controllers/headerController.js";
@@ -123,6 +125,16 @@
         header.init();
     });
 </script>
+
+<script type="module">
+    import footerController from "./mvc/controllers/footerController.js";
+
+    $(document).ready(function () {
+        const footer = new footerController();
+        footer.init();
+    });
+</script>
+
 
 
 </body>
