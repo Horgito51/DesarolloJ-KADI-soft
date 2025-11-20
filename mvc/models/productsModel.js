@@ -225,66 +225,18 @@ const products = [
 ];
 
 
-class Products{
-  products(){
-    this.products=products;
-    this.cart=[];
-  }
 
-  getProducts(){
-    return this.products;
-  }
+export default class ProductModel {
 
-  getProductById(id){
-    return this.cart[id];
-  }
-
-  getProductosDestacados(){
-
-  }
-
-  addProductCart(id){
-    const p=this.getProductById(id)
-    if (!p){
-      return error;
-    }
-    if(p.stock<=0){
-      return error;
-    }
-    p.stock-=1;
-    this.cart.push(p);
-  }
-
-
-}
-
-
-class Products{
-
-    constructor(){
+    constructor() {
         this.products = products;
-        this.cart = [];
     }
 
-    getProduct(){
+    getAllProducts() {
         return this.products;
     }
-    getProductById(id){
 
+    getProductById(id) {
+        return this.products.find(p => p.id === Number(id));
     }
-
-    addProduct(id){
-        const p= this.getProductById(id);
-        if(!p){
-            return error;
-        }
-        if(p.enStock == 0){
-            return error;
-        }
-        p.enStock--;
-        this.cart.push(p);
-
-    }
-
-
 }

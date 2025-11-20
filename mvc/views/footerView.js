@@ -1,0 +1,45 @@
+export default class footerView{
+  constructor(){
+    this.headerComponent=$("#foot");
+    this.html=`
+ <div class="footer container-fluid d-flex justify-content-center" style="margin-top:15px">
+  <div class="row"  >
+  <div class=" col-md-3 col-sm-12 col-12 d-flex flex-column align-items-center">
+    <h2>Recursos útiles</h2>
+    <p>Acerca de nosotros</p>
+    <p>Políticas de privacidad</p>
+    <p>Términos y condiciones</p>
+    <p>Contáctanos</p>
+  </div>
+
+  <div class=" col-md-3 col-sm-12 col-12 d-flex flex-column align-items-center">
+    <div class="row" >
+      <h2>J-KADI SOFT</h2>
+    </div>
+    <p style="color:white;">Redes sociales</p>
+    <div class="w-100 d-flex justify-content-center">
+      <img class="footer_img" src="img/Facebook.png" onclick="window.open('https://www.facebook.com/')" alt="Facebook" width="50px" height="50px">
+      <img class="footer_img" src="img/Insta.png" onclick="window.open('https://www.instagram.com/aeipuceuio')" style="margin: 0 10px;" alt="Instagram" width="50px" height="50px">
+      <img src="img/Twitter.png" onclick="window.open('https://x.com/')" alt="Twitter" width="50px" height="50px">
+    </div>
+    <div class="row">
+      <p class="copyright">&copy; 2024 J-KADI SOFT</p>
+    </div>
+  </div>
+
+  <div class=" col-md-3 col-sm-12 col-12 d-flex flex-column align-items-center">
+    <h2>Contáctanos</h2>
+    <p>📍Av 12 de octubre y Ignacio de Ventimilla</p>
+    <p>📱 +593 98 472 3243</p>
+    <p>📧 Grupo3@jkadisoft.com</p>
+  </div>
+  </div>
+</div>
+
+  `
+  }
+  renderfooter(html){
+    this.headerComponent.html(this.html);
+  }
+
+}
