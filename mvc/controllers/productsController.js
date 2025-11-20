@@ -1,35 +1,35 @@
 import ProductModel from "../models/productsModel.js";
 import ProductView from "../views/productsView.js";
 
-class ProductController{
-  constructor(){
-    this.view=new ProductView();
-    this.model=new ProductModel();
-    this.proxpagina = 10;
-    this.paginaActual = 1;
+export default class ProductController {
+    constructor() {
+        this.view = new ProductView();
+        this.model = new ProductModel();
+        this.proxpagina = 10;
+        this.paginaActual = 1;
+    }
 
-  }
-
-  init() {
+    init() {
         // Inicializar la página con los productos
-        this.refreshPage();  // función para cargar los productos y la paginación
-
-        //manejador para el clic en la paginación
+        this.refreshPage();
+        
+        // Manejador para el clic en la paginación
         this.view.clickPagination((nuevaPagina) => {
             this.paginaActual = nuevaPagina;
-            this.refreshPage();  // Refresca la vista cuando cambia la página
+            this.refreshPage();
         });
     }
 
     refreshPage() {
         // Obtengo la lista de todos los productos
         const p = this.model.getAllProducts();
+        console.log(p);
 
         // Calculo el número total de páginas
         const totalPaginas = Math.ceil(p.length / this.proxpagina);
 
         // Muestra los productos de la página actual
-        this.renderPage(p, totalPaginas);
+        this.renderPage(p);
 
         // Renderiza la paginación para la página actual
         this.view.renderPagination(this.paginaActual, totalPaginas);
@@ -46,6 +46,4 @@ class ProductController{
         // Renderiza los productos en la vista
         this.view.renderProducts(productosPagina);
     }
-
-
-  }
+}
