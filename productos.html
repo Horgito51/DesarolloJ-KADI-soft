@@ -32,62 +32,42 @@
 
   <div id="paginacion" class="mt-4"></div>
 
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
   <footer class="container-fluid" style="margin-top: 50px;">
     <div id="foot" class></div>
   </footer>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<script src="js/domDetalleProductoPrueba.js"></script>
-
-<script src="js/domProductos.js"></script>
-
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  <!-- Cargar JQuery primero -->
+<script type="module">
+    import ProductController from './mvc/controllers/productsController.js';
+    $(document).ready(function () {
+        // Crea una instancia del controlador y lo inicializa
+        const controller = new ProductController();
+        controller.init();  // Inicializa el controlador
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 <script type="module">
     import headerController from "./mvc/controllers/headerController.js";
-
     $(document).ready(function () {
         const header = new headerController();
-        header.init();
+        header.init();  // Inicializa el header
     });
 </script>
 
 <script type="module">
     import footerController from "./mvc/controllers/footerController.js";
-
     $(document).ready(function () {
         const footer = new footerController();
-        footer.init();
+        footer.init();  // Inicializa el footer
     });
 </script>
+
 
 </body>
 

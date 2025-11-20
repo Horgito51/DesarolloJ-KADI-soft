@@ -10,24 +10,28 @@ export default class ProductView{
     renderProducts(products){
         this.proContenedor.addClass("flex_container");
         this.proContenedor.empty();
+        
         products.forEach(p_obj => {
             const cardHTML = `
                 <div class="card" data-url="${p_obj.enlace}">
-                    <img src="${p_obj.imagen}" class="card-img-top imgproduct" alt="${p_obj.titulo}">
+                    <img src="${p_obj.imagen}" class="card-img-top imgproduct" alt="${p_obj.tittle}">
                     <div class="card-body">
-                        <h5 class="card-title">${p_obj.titulo}</h5>
+                        <h5 class="card-title">${p_obj.tittle}</h5>
                         <p class="card-text">${p_obj.descripcion}</p>
                         <a href="#" class="btn btn-custom">Comprar ahora</a>
                     </div>
                 </div>
             `;
-            cardHTML.click(function () {
-                let url = $(this).data('url');
-                window.location.href = url;
-            });
             this.proContenedor.append(cardHTML);
-            
-        });   
+        });
+        
+        // Agregar el evento click DESPUÉS de agregar todos los elementos
+        this.proContenedor.find('.card').on('click', function() {
+            let url = $(this).data('url');
+            if (url) {
+                window.location.href = url;
+            }
+        });
     }
 
     renderPagination(paginaActual,totalPaginas){
@@ -59,7 +63,7 @@ export default class ProductView{
         `;
 
         paginacionHtml += '</ul></nav>';
-        paginacion.html(paginacionHtml);
+        this.paginacion.html(paginacionHtml);
     }
 
     //Detectar el click en la paginación y ejecutar el handler con el controller

@@ -7,7 +7,7 @@ const products = [
         stock: 7,
         enStock: true,
         enlace: 'camisetaBarca.html',
-        imagen: "img/P1.png",
+        imagen: "img/P1.png", 
         marca: "Nike",
         opciones: {
             talla: {
