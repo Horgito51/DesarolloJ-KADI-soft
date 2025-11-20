@@ -13,7 +13,7 @@ export default class ProductView{
         
         products.forEach(p_obj => {
             const cardHTML = `
-                <div class="card" data-url="${p_obj.enlace}">
+                <div class="card" data-id="${p_obj.id}">
                     <img src="${p_obj.imagen}" class="card-img-top imgproduct" alt="${p_obj.tittle}">
                     <div class="card-body">
                         <h5 class="card-title">${p_obj.tittle}</h5>
@@ -27,10 +27,9 @@ export default class ProductView{
         
         // Agregar el evento click DESPUÉS de agregar todos los elementos
         this.proContenedor.find('.card').on('click', function() {
-            let url = $(this).data('url');
-            if (url) {
-                window.location.href = url;
-            }
+            let id = $(this).data('id');
+            window.location.href = `detalleProducto.html?id=${id}`;
+            
         });
     }
 
