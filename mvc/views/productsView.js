@@ -1,4 +1,4 @@
-class ProductView{
+export default class ProductView{
 
     constructor(){
         this.proContenedor = $('#products');
