@@ -1,4 +1,4 @@
-class ProductView{
+export default class ProductView{
 
     constructor(){
         this.proContenedor = $('#products');
@@ -71,12 +71,9 @@ class ProductView{
             if ($li.hasClass('disabled')) return;
 
             const nuevaPagina = parseInt($this.data('pagina'));
+            handler(nuevaPagina);
         });
 
     }
-
-
-    
-
 
 }
